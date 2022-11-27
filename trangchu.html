@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="//fonts.googleapis.com/css?family=Quicksand:300,400,500,700subset=vietnamese">
+    <link rel="preload" href="//fonts.googleapis.com/css?family=Quicksand:300,400,500,700subset=vietnamese" as="style">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700subset=vietnamese" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="./access/fonts/fontawesome-free-6.2.0-web/css/all.min.css">
+    <link rel="stylesheet" href="./access/css/base.css">
+    <link rel="stylesheet" href="./access/css/trangchu.css">
+    <link rel="stylesheet" href="./trangsp.html">
+    <title>GAP 2002</title>
+    <!-- CSS only-->
+    <!-- <link rel="stylesheet" href="./access/css/test2.css"> -->
+</head>     
+<body>
+    <div class="app">
+        <nav class="header" id="header">
+            <div class="top_header">
+                <p><i class="fa-solid fa-truck"></i>  Miễn phí vận chuyển đơn từ 300k</p>
+            </div>
+            <div class="container-fluid   ">
+                <div class="header__container">
+                    <div class="header__list">
+                        <button class="header__list-icon" onclick="showHeaderList()">
+                            <i class="fa-solid fa-bars"></i>
+                        </button>
+                        <div id="header__list-container" class="header__list-container">
+                            <ul >
+                                <li><a href="#">Trang chủ</a></li>
+                                <li class="">
+                                    <button class="header__list__sub-nav-link js-header__list__sub-nav-link" onclick="showSubnav()" >Sản Phẩm <i class="fa-solid fa-chevron-down"></i></button>
+                                    <ul id="showSubnav" class="sub-nav-menu js-sub-nav-menu">
+                                        <li><a class="sub-nav-item" href="">Áo</a></li>
+                                        <li><a class="sub-nav-item" href="">Đầm</a></li>
+                                        <li><a class="sub-nav-item" href="">Quần</a></li>
+                                        <li><a class="sub-nav-item" href="">Phụ kiện</a></li>
+                                    </ul>      
+                                </li>
+                                <li><a href="">Blog</a></li>
+                                <li><a href="">Khuyến mãi chào hè</a></li>
+                                <li><a href="">Giới thiệu</a></li>
+                                <li><a href="">Liên hệ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="header__logo">
+                        <a href="">
+                            <img class="logo" src="./access/Img/Gap-Logo.webp" alt="">
+                        </a>
+                    </div>
+                    <nav class="header__navbar">
+                            <ul >
+                                <li><a href="">Trang chủ</a></li>
+                                <li>
+                                    <div class="">
+                                        <a href="./trangsp.html">Sản Phẩm <i class="fa-solid fa-chevron-down"></i></a>
+                                        <ul class="header__subnavbar">
+                                            <li><a class="header__subnavbar-item" href="">Áo</a></li>
+                                            <li><a class="header__subnavbar-item" href="">Đầm</a></li>
+                                            <li><a class="header__subnavbar-item" href="">Quần</a></li>
+                                            <li><a class="header__subnavbar-item" href="">Phụ kiện</a></li>
+                                        </ul>   
+                                    </div>  
+                                </li>
+                                <li><a href="">Blog</a></li>
+                                <li><a href="">Khuyến mãi</a></li>
+                                <li><a href="">Giới thiệu</a></li>
+                                <li><a href="">Liên hệ</a></li>
+                            </ul>
+                    </nav>
+                    <div class="header__icon">
+                        <div class="header__icon-wrap">
+                            <div class="header__icon__search dropdown-center">
+                                <button 
+                                class=" box-icon" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                
+                                    <span class="  fa-solid fa-magnifying-glass"></span>
+                                </button >
+                                <div class="dropdown-menu header__search ">
+                                    <form action="" class="">
+                                        <h2>TÌM KIẾM</h2>
+                                        <HR></HR>
+                                        <div class="header__search__search-bar">
+                                            <input type="text" class="search-bar__input" placeholder="Tìm kiếm sản phẩm">
+                                            <button class="search-bar__btn">
+                                                <i class="search-bar__icon  fa-solid fa-magnifying-glass"></i>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="header__icon__login dropdown-center">
+                                <button class="box-icon"
+                                type="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                >
+                                    <span class="fa-solid fa-circle-user   "></span>
+                                </button>
+                                    <div class="header__login dropdown-menu">
+                                        <form action="">
+                                            <h2>ĐĂNG NHẬP TÀI KHOẢN</h2>
+                                            <p>Nhập tài khoản và mật khẩu của bạn</p>
+                                            <div class="header__login__nor">
+                                                <input type="text" placeholder="Tài khoản" id="user" malgength="128">
+                                            </div>
+                                            <div class="header__login__nor">
+                                                <input type="text"  placeholder="Mật khẩu" id="password">
+                                            </div>
+                                            <!-- <div class="btn-wrap header__login__confirm"> -->
+                                                <button class="btn ">
+                                                    Đăng nhập
+                                                </button>
+                                            <!-- </div> -->
+                                            <div class="header__or">
+                                                <div class="line"></div>
+                                                <span class="or">hoặc</span>
+                                                <div class="line"></div>
+                                            </div>
+                                            <div class="btn-wrap">
+                                                <button class="btn">
+                                                    <div class="socials-icon  ">
+                                                        <i class="fa-brands fa-facebook"></i>
+                                                    </div>
+                                                    <div class="">Facebook</div>
+                                                </button>
+                                                <button class="btn">
+                                                    <div class="socials-icon">
+                                                        <i class="fa-brands fa-google"></i>
+                                                    </div>
+                                                    <div class="">Google</div>
+                                                </button>
+                                            </div>
+                                            <div class="header__login__footer">
+                                                Khách hàng mới? <a class="create-account" href="">Tạo tài khoản</a>
+                                            </div>
+                                            <div class="header__login__footer">
+                                                Quên mật khẩu? <a href="" class="restore-pass">Khôi phục mật khẩu</a>
+                                            </div>
+                                        </form>
+                                    </div>
+                            </div>
+                            <div class="header__icon__cart dropdown-center">
+                                <button class=" box-icon " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="fa-solid fa-cart-shopping"></span>
+                                </button>
+                                <div class="header__cart dropdown-menu">
+                                   <h2>Giỏ hàng</h2> 
+                                   <div class="cart_container">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="cart-icon bi bi-cart2" viewBox="0 0 16 16">
+                                            <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+                                        </svg>
+                                        <p>Hiện chưa có sản phẩm</p>
+                                   </div>
+                                   <hr>
+                                   <div class="header__cart-money">
+                                    <p>Tổng tiền</p>
+                                    <p class="home-product-item__price-current">0<u>đ</u></p>
+                                   </div>
+                                   <div class="header__cart_container-btn">
+                                    <button class="btn" >Xem giỏ hàng</button>
+                                    <button class="btn">Thanh toán</button>
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header__search-bar">
+                    <input type="text" class="search-bar__input" placeholder="Tìm kiếm sản phẩm">
+                    <button class="search-bar__btn">
+                        <i class="search-bar__icon  fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+                
+            </div> 
+        </nav> 
+        
+        <div class="header__slider">
+            <div class="slider-container__1 " >
+                <div id="carouselExampleDark" class="carousel carousel-dark slide " data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                      <a href="">
+                        <div class="carousel-item active" data-bs-interval="5000">
+                          <img src="./access/Img/slider.png" class="d-block w-100" alt="">
+
+                        </div>
+                      </a>
+                      <a href="">
+                        <div class="carousel-item" data-bs-interval="5000">
+                          <img src="./access/Img/slider2.png" class="d-block w-100" alt="">
+                        </div>
+                      </a>
+                      <a href="">
+                        <div class="carousel-item" data-bs-interval="5000">
+                          <img src="./access/Img/slider3.png" class="d-block w-100" alt="">
+                        </div>
+                      </a>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                    </div>
+                </div>  
+            </div>
+            <!-- start slider 2 -->
+            <div class="slider-container__2">
+                <div class="slider">
+                    <div class="slides" id="slides">
+                      <div class="slide__down ">
+                        <img src="./access/Img/prodduct-slider/quan.jpg" class="w-100" alt="">
+                        <div class="slider__btn-container w-100">
+                            <div class="category">
+                                <h2>Quần</h2>
+                                <button class="btn">Xem ngay</button>
+                            </div>
+                        </div>
+
+                      </div>
+                      <div class="slide__down ">
+                        <img src="./access/Img/prodduct-slider/ao.png" class="w-100" alt="">
+                        <div class="slider__btn-container w-100">
+                            <div class="category">
+                                <h2>Áo</h2>
+                                <button class="btn">Xem ngay</button>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="slide__down ">
+                        <img src="./access/Img/prodduct-slider/phukien2.png" class="w-100" alt="">
+                        <div class="slider__btn-container w-100">
+                            <div class="category">
+                                <h2>Phụ kiện</h2>
+                                <button class="btn">Xem ngay</button>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="slide__down ">
+                        <img src="./access/Img/prodduct-slider/vay.jpg" class="w-100" alt="">
+                        <div class="slider__btn-container w-100">
+                            <div class="category">
+                                <h2>Váy</h2>
+                                <button class="btn">Xem ngay</button>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                        <a id="prev" class="prev">
+                            <i class="fas fa-caret-left"></i>
+                        </a>
+                        <a id="next" class="next">
+                            <i class="fas fa-caret-right"></i>
+                        </a>
+                  </div>
+            </div>
+            <!-- end slider 2 -->
+        </div>
+        <!-- Body -->
+        <div class="container home-product-item-wrapper">
+            <div class="row ">
+                <div class="col-xl-2 col-lg-3 col-4 product">
+                    <a class="home-product-item" href="#">
+                        <div class="home-product-item__img" style="background-image:url('./access/Img/product/308674659_858863075282740_3388717713172910597_n.png')"></div>
+                        <h4 class="home-product-item__name">Áo khoác Bomber form rộng Unisex CHOOSE, Áo Hoodie có mũ Oversize</h4>
+                        <div class="home-product-item__price">
+                            <span class="home-product-item__price-current">999.000đ</span>
+                            <span class="home-product-item__price-old">1.200.000đ</span>
+                        </div>
+                        <div class="home-product-item__action">
+                            <span class="home-product-item__like home-product-item__like--liked">
+                                <i class="home-product-item__like-icon-emty fa-regular fa-heart"></i>
+                                <i class="home-product-item__like-icon-fil fa-solid fa-heart"></i>
+                                <!-- <i class="fa-solid fa-heart"></i> -->
+                            </span>
+                            <!-- <span class="home-product-item__sold">88 đã bán</span> -->
+                        </div>
+                        <div class="home-product-item__origin">
+                            <div class="home-product-item__grand">whoo</div>
+                            <div class="home-product-item__origin-name">Nhật bản</div>
+                        </div>
+                        <div class="home-product-item__favor">
+                            <i class="fa-solid fa-check"></i>
+                            <span>Yêu thích</span>
+                        </div>
+                        <div class="home-product-item__sale-off">
+                            <div class="home-product-item__sale-off-percent">10%</div>
+                            <div class="home-product-item__sale-off-label">GIẢM</div>
+                        </div>
+                        </a>
+                </div>
+                
+                
+            </div>
+        </div>
+        <!-- end body -->
+        <!--start about us -->
+        <div class="container-fluid about-us">
+            <div class="row ">
+                <div class="col-md-6 col-sm-12 col-xs-12 info-img">
+                    <img class="col-md-6 col-sm-12 col-xs-12 w-100 container-background" src="./access/Img/about_us.jpg" alt="">
+                    <div class="box-banner-info">
+                        <div class="">
+                            <h1 class="info-header">Về chúng tôi</h1>
+                        </div>
+                        <a class="btn w-50" href="">Xem ngay</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12 info-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, commodi molestias! Praesentium, pariatur at fugit sit dicta voluptatem culpa voluptas harum omnis. Sed, consequuntur eaque officia dolor aliquid magnam possimus.
+                </div>
+
+            </div>
+        </div>
+        <!-- end about us -->
+        <!--start register -->
+        <div class="container-fluid contact-us">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-8">
+                    <div class="contact-email">
+                        <div class="title-contact">
+                            <i class="fa-solid fa-envelope-open-text contact-icon"></i>
+                            <h4>Đăng kí nhận tin</h4>
+                        </div>
+                        <form action="" class="input-group">
+                            <input class="form__input-email" type="email" placeholder="Nhập email của bạn">
+                            <button type="submit" class="form-btn">ĐĂNG KÍ</button>
+                        </form>
+                        
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-4 contact-number">
+                    <i class="fa-solid fa-phone contact-icon"></i>
+                    <p>Hỗ trợ / Mua hàng:</p>
+                    <a href="1900 636 099">1900 636 099</a>
+                </div>
+            </div>
+        </div>
+        <!-- end register -->
+        <!-- Footer -->
+        <div class="footer ">
+            <div class="container-fluid ">
+                <div class="footer-container row">
+                    <div class="footer-col col-md-6 col-sm-12 col-lg-5 footer__intro">
+                        <h3 class="footer__header ">
+                            Giới thiệu
+                        </h3>
+                        <p>
+                            GAP 2002 là một kênh chuyên cung cấp các mặt hàng second hand bao gồm các loại quần áo, phụ kiện dành cho các bạn nữ có phong cách thời trang trẻ trung nhẹ nhàng, năng động
+        
+                        </p>
+                        <div class="">
+                            <img src="./access/Img/Gap-Logo.webp" alt="" class="logo">
+                            <div class="footer__icon-wrap">
+                                <a class="footer__icon" href=""><i class="fa-brands fa-facebook-f"></i></a>
+                                <a class="footer__icon" href=""><i class="fa-brands fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-col col-md-6 col-sm-12 col-lg-3">
+                        <h3 class="footer__header">
+                            Thông tin liên hệ
+                        </h3>
+                        <div class="footer__contact">
+                            <ul class="footer__contact__list">
+                                <li>
+                                    <a href="">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    <span>
+                                        142/3/4A số 17 Quang Trung, Gò Vấp, Hồ Chí Minh
+                                    </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <i class="fa-solid fa-phone"></i>
+                                    <span>
+                                        0392836516  
+                                    </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <i class="fa-solid fa-fax"></i>
+                                    <span>
+                                        1900.888.888
+                                    </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" >
+                                        <i class="fa-solid fa-envelope"></i>
+                                    <span>
+                                        gap2002@gmail.com
+                                    </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-col col-md-6 col-sm-12 col-lg-2">
+                        <h3 class="footer__header">
+                            Liên kết
+                        </h3>
+                        <p><a href="">Tất cả sản phẩm</a></p>
+                    </div>
+                    <div class="footer-col col-md-6 col-sm-12 col-lg-2">
+                        <h3 class="footer__header">
+                            Hỗ trợ
+                        </h3>
+                        <ul>
+                            <li>
+                                <a href="">Tìm kiếm</a>
+                            </li>
+                            <li>
+                                <a href="">Giới thiệu</a>
+                            </li>
+                            <li>
+                                <a href="">Chính sách đổi trả</a>
+                            </li>
+                            <li>
+                                <a href="">Chính sách bảo mật</a>
+                            </li>
+                            <li>
+                                <a href="">Điều khoản dịch vụ</a>
+                            </li>
+                            <li>
+                                <a href="">Liên hệ</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+    </div>
+
+
+
+    <!-- modal layout -->
+    <div class="modal js-modal">
+        <div class="modal_container js-modal-container">
+          <div class="modal_form__container">
+            <div class="modal_close js-modal-close">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <div class="modal_body">
+                <div class="modal_info-container">
+                    <h3>Đăng ký nhận thông tin</h3>
+                    <div class="modal_info">
+                        <p>Chúng tôi sẽ cập nhật các chương trình khuyến mãi đến bạn</p>
+                        <ul>
+                            <li>Giảm giá các sản phẩm</li>
+                            <li>Ưu đãi sinh nhật</li>
+                            <li>Sản phẩm mới</li>
+                        </ul>
+                    </div>
+                </div>
+                <form action="">
+                      <input
+                        id="tickets-email"
+                        type="text"
+                        class="modal_input"
+                        placeholder="Nhập Email của bạn"
+                      />
+                      <input type="submit" id="modal__register" value="Đăng Kí"></input>
+                </form> 
+            </div>
+          </div>
+        </div> 
+    </div>
+
+    <script src="./access/js/product.js"></script>
+    <script src="./access/js/2nd_slider.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./access/js/main.js"></script>
+</body>
+</html>
