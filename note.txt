@@ -13,3 +13,6 @@ border subnav:#d2beb4
 
 login: h: 520px
 	w: 500px
+
+
+chưa làm trasition của ô mô tả tragn chi tiết
