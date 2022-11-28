@@ -53,54 +53,60 @@ function LoadJson(){
                         productDescription+="<p>"+p.Mota[b]+"</p>"
                         
                     }
+                    var count=0;
                     for(let d of data){
                         if(d.Hang == p.Hang){
-                            // console.log(d)
-                            function showProduct(d) {
-                                var s = 0;
-                                s=d.Price-d.Discount*d.Price/100;
-                                let price ="";
-                                let discountTag="";
-                                if (d.Discount==0) {
-                                    price+="<div class='home-product-item__price'>";
-                                    price+="<span class='home-product-item__price-no-discount'>"+d.Price+".000đ</span>";
-                                    price+="</div>";
-                                }else{
-                                    price+="<div class='home-product-item__price'>";
-                                    price+="<span class='home-product-item__price-current'>"+s+".000đ</span>";
-                                    price+="<span class='home-product-item__price-old'>"+d.Price+".000đ</span>";
-                                    price+="</div>";
+                            if(count<6){
+                                count ++;
+                                function showProduct(d) {
+                                    var s = 0;
+                                    s=d.Price-d.Discount*d.Price/100;
+                                    let price ="";
+                                    let discountTag="";
+                                    if (d.Discount==0) {
+                                        price+="<div class='home-product-item__price'>";
+                                        price+="<span class='home-product-item__price-no-discount'>"+d.Price+".000đ</span>";
+                                        price+="</div>";
+                                    }else{
+                                        price+="<div class='home-product-item__price'>";
+                                        price+="<span class='home-product-item__price-current'>"+s+".000đ</span>";
+                                        price+="<span class='home-product-item__price-old'>"+d.Price+".000đ</span>";
+                                        price+="</div>";
+                                        
+                                        discountTag+="<div class='home-product-item__sale-off'>";
+                                        discountTag+="<div class='home-product-item__sale-off-percent'>"+d.Discount+"%</div>";
+                                        discountTag+="<div class='home-product-item__sale-off-label'>GIẢM</div>";
+                                        discountTag+="</div>";
+                                    }
                                     
-                                    discountTag+="<div class='home-product-item__sale-off'>";
-                                    discountTag+="<div class='home-product-item__sale-off-percent'>"+d.Discount+"%</div>";
-                                    discountTag+="<div class='home-product-item__sale-off-label'>GIẢM</div>";
-                                    discountTag+="</div>";
+                                    html+="<div class='col-2 product' id='"+d.MaSP+"'>";
+                                    html+="<button class='home-product-item'  type='submit' name='maSp' id='"+d.MaSP+"' value='"+d.MaSP+"'>";
+                                    html+="<div class='home-product-item__img' style='background-image:url(./access/Img/sanpham/"+d.Hinhanh[0]+")'></div>";
+                                    html+="<h4 class='home-product-item__name'>"+d.TenSP+"</h4>";
+                                    html+=price;
+                                    html+="<div class='home-product-item__action'>";
+                                    html+="<span class='home-product-item__like home-product-item__like--liked'>";
+                                    html+="<i class='home-product-item__like-icon-emty fa-regular fa-heart'></i>";
+                                    html+="<i class='home-product-item__like-icon-fil fa-solid fa-heart'></i>";
+                                    html+="</span>";
+                                    html+="</div>";
+                                    html+="<div class='home-product-item__origin'>";
+                                    html+="<div class='home-product-item__grand'>"+d.Hang+"</div>";
+                                    html+="<div class='home-product-item__origin-name'>Nhật bản</div>";
+                                    html+="</div>";
+                                    html+="<div class='home-product-item__favor'>";
+                                    html+="<i class='fa-solid fa-check'></i>";
+                                    html+="<span>Yêu thích</span>";
+                                    html+="</div>";
+                                    html+=discountTag;
+                                    html+="</button>";
+                                    html+="</div>";
                                 }
-                                
-                                html+="<div class='col-2 product' id='"+d.MaSP+"'>";
-                                html+="<button class='home-product-item'  type='submit' name='maSp' id='"+d.MaSP+"' value='"+d.MaSP+"'>";
-                                html+="<div class='home-product-item__img' style='background-image:url(./access/Img/sanpham/"+d.Hinhanh[0]+")'></div>";
-                                html+="<h4 class='home-product-item__name'>"+d.TenSP+"</h4>";
-                                html+=price;
-                                html+="<div class='home-product-item__action'>";
-                                html+="<span class='home-product-item__like home-product-item__like--liked'>";
-                                html+="<i class='home-product-item__like-icon-emty fa-regular fa-heart'></i>";
-                                html+="<i class='home-product-item__like-icon-fil fa-solid fa-heart'></i>";
-                                html+="</span>";
-                                html+="</div>";
-                                html+="<div class='home-product-item__origin'>";
-                                html+="<div class='home-product-item__grand'>"+d.Hang+"</div>";
-                                html+="<div class='home-product-item__origin-name'>Nhật bản</div>";
-                                html+="</div>";
-                                html+="<div class='home-product-item__favor'>";
-                                html+="<i class='fa-solid fa-check'></i>";
-                                html+="<span>Yêu thích</span>";
-                                html+="</div>";
-                                html+=discountTag;
-                                html+="</button>";
-                                html+="</div>";
+                                showProduct(d)
+                            }else{
+                                html+="";
                             }
-                            showProduct(d)
+
                         }
                     }
                     document.getElementById("product-name").innerHTML=p.TenSP;
