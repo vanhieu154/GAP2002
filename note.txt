@@ -2,17 +2,4 @@ dùng font-size : 62.5%
 để đơn vị rem bằng 1/10px
 ví dụ 12 px là 1.2rem
 
-
-sans-serif là chủng chữ k có chân
-
-màu của đường giữa subnav
-:#f5f7f8
-
-border subnav:#d2beb4
-
-
-login: h: 520px
-	w: 500px
-
-
 chưa làm trasition của ô mô tả tragn chi tiết
