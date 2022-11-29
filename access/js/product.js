@@ -135,7 +135,7 @@ function LoadJson(){
             function searchProduct(){
                 var arr=data;
                 var s="";
-                product =[];
+                let product =[];
                 var j=0;
                 function getUrlParams() {
                     const params = new URLSearchParams (window.location.search);
@@ -150,6 +150,9 @@ function LoadJson(){
                 showProduct(product,0,product.length,"total_product")
             }
             searchProduct() 
+            var i=0;
+            console.log(i);
+            i++
         }
     )
     .catch(function(err){
