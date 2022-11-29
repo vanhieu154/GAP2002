@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --darkpink: #b8a898;
+    --lightpink: #d2beb4;
+    --darkbrown: #6B4932;
+    --black: black;
+    --white: #ffffff;
+    --grey: #ADA9A9;
+  }
+  body{
+    text-align: justify;
+  }
+  .header{
+    background-color: var(--lightpink);
+    padding: 5px ;
+    margin-top: 102px;
+    font-size: 12px;
+  }
+  .header__text{
+    padding-left: 70px;
+  }
+.fontweight__bolder{
+    font-weight: bold;
+}
+.title__left{
+    position: relative; 
+}
+.title__left::after{
+    content: "";
+    border: 1px solid;
+    display: block;
+    margin-top: 5px;
+    min-width: 50px;
+}
+.title__right{
+    font-size: 24px;
+    font-weight: bolder;
+    color: var(--darkbrown);
+    margin-top: 20px;
+}
+a{
+    color: var(--black);
+    text-decoration: none;
+}
+.col__left{
+    padding: 0px;
+}
+.col__right{
+    padding-left: 10px;
+    padding-right: 50px;
+}
+h5{
+    text-align: center;
+}
+.col__left__list{
+    margin-top: 30px;
+}
+.title__chinhsachCOD{
+    text-align: center;
+    font-weight: bolder;
+    color: var(--darkbrown);
+    margin-top: 20px;
+}
+.chinhsach > li{
+    font-weight: bold;
+    font-size: large;
+}
+

@@ -1,0 +1,150 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.col--left{
+    padding-left: 70px;
+    padding-top: 50px;
+    padding-right: 40px;
+}
+.col--right{
+    flex: 0 0 auto;
+    width: 50%;
+    padding-top: 50px;
+    background-color: var(--lightgrey);
+}
+
+:root{
+    --darkpink: #b8a898;
+    --lightpink: #d2beb4;
+    --darkbrown: #6B4932;
+    --black: black;
+    --white: #ffffff;
+    --grey: #ADA9A9;
+    --lightgrey: #EEECEC;
+    --red: #FF0000;
+}
+.label--head{
+    color: var(--darkbrown);
+}
+a{
+    color: var(--black);
+    text-decoration: none;
+}
+.button--gui__position{
+    text-align: right;
+}
+.button--gui{
+    background-color: initial;
+    font-weight: bold;
+    margin-left: auto; 
+    border: 1px solid  var(--darkbrown);
+    padding-left: 40px; 
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+   
+    
+} 
+.button--gui:hover{
+    background-color: var(--darkbrown);
+    color: white;
+} 
+.button--gui:active{
+    opacity: 0.7;
+    background-color: var(--darkpink);
+} 
+.box__border{
+border: solid 1px;
+border-color: var(--grey);
+padding-top: 10px;
+padding-bottom: 10px;
+border-radius: 10px;
+padding-left: 20px;
+padding-right: 20px;
+}
+.ship-infor{
+    display: none;
+}
+.icon__qr{
+    color: var(--black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+.icon__check{
+    color: var(--darkbrown);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+}
+.thongtin__textright{
+    text-align: right;
+}
+.thongtin__textleft{
+    text-align: left;
+}
+.lienhe{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 30px;
+}
+.button--muahang{
+    background-color: initial;
+    font-weight: bold;
+    margin-left: auto; 
+    border: 1px solid  var(--darkbrown);
+    padding-left: 40px; 
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+} 
+.button--muahang:hover{
+    background-color: var(--darkbrown);
+    color: white;
+} 
+.button--muahang:active{
+    opacity: 0.7;
+    background-color: var(--darkpink);
+} 
+.font--sp{
+    font-size: 14px;
+}
+.color--gia{
+    color: var(--red);
+}
+.decoration--gia{
+    text-decoration: dashed;
+}
+.lienhe span{
+    margin-left: 10px;
+}
+img{
+    position: relative;
+}
+.icon--soluong{
+position: absolute;
+margin-left: -15px;
+margin-top: -10px;
+/* padding-left: -30px; */
+}
+.number--soluong{
+    position: absolute;
+    margin-left: -4px;
+    margin-top: -5px;
+    font-size: 12px;
+    color: var(--white);
+    /* padding-left: -30px; */
+}
+.button--hoantatdon{
+    text-align: right;
+}
+.success-order{
+    display: none;
+}
+.delivery-info{
+    display: none;
+}
