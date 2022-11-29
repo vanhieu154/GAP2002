@@ -14,6 +14,14 @@ function LoadJson(){
     })
     .then(
         function(data){
+            const productdss=[];
+            var j=0;
+            for(p of data){
+                productdss[j]=p;
+                j++
+                // console.log(productdss);
+            }
+            // productdss=data;
             let items="";
             let slider="";
             let productPrice="";
@@ -117,16 +125,16 @@ function LoadJson(){
                     document.getElementById("curent_product").innerHTML=p.TenSP;
                     document.getElementById("total_product").innerHTML=html;
                     
-                
+                return productdss;
                 
                 }
+                }
+            }
+        )
+        .catch(function(err){
+            throw new Error(err.message);
+        })
         }
-    }
-)
-.catch(function(err){
-    throw new Error(err.message);
-})
-}
 let amountElement = document.getElementById('amount');
 let amount=amountElement.value;
 let render=(amount) =>{
@@ -150,3 +158,4 @@ let showEvaluate=()=>{
     document.getElementById("minus-icon-2").classList.toggle("deactivate");
     document.getElementById("plus-icon-2").classList.toggle("activate");
 }
+console.log(productdss);
