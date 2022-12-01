@@ -101,12 +101,12 @@ function LoadJson(){
                 // product1[j]=arrP[i];
                 // const product1=[];
                 let product=[];
-                j=0;
+                var j=0;
                 let all_brand_check = document.querySelectorAll('input[class="brand_category"]:checked');
                 let all_price_check = document.querySelectorAll('input[class="price_category"]:checked');
                 if(all_brand_check.length == 0){
-                    for(let y = 0 ; y<all_price_check.length;y++){
-                        let gia=all_price_check[y].value;
+                    for(let y = 0 ; y < all_price_check.length;y++){
+                        let gia = all_price_check[y].value;
                         let s = 0;
                         for(let p of data){
                             s=p.Price-p.Discount*p.Price/100;
@@ -120,10 +120,10 @@ function LoadJson(){
                 }else
                 for(let x = 0; x < all_brand_check.length;  x++)
                 {
-                    let brand=all_brand_check[x].value;
+                    let brand = all_brand_check[x].value;
                     for(let p of data ){
                         if(all_price_check.length==0){
-                            if(p.Hang==brand){
+                            if(p.Hang == brand){
                                 product[j]=p;
                                 // product1[j]=p;
                                 j++;   
@@ -134,7 +134,7 @@ function LoadJson(){
                                 let gia=all_price_check[y].value;
                                 let s = 0;
                                 s=p.Price-p.Discount*p.Price/100;
-                                if (s>(gia-100) && s<gia || s==gia) {
+                                if ( s > (gia-100) && s < gia || s == gia ) {
                                     product[j]=p;
                                     // product1[j]=p;
                                     j++;  
@@ -143,10 +143,9 @@ function LoadJson(){
                         };
                     }
                 }
-                if(product.length==0){
+                if(product.length == 0){
                     document.getElementById("total_product").innerHTML="<h1 style='margin: auto;padding-top:50px;'>Không tìm thấy sản phẩm phù hợp</h1>";
                 }else{
-                    console.log(product1[j]);
                     showProduct(product,0,product.length,"total_product"); 
                 }  
             }
