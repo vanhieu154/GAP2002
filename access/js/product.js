@@ -1,4 +1,9 @@
+
+
+
 function LoadJson(){
+    // const product1=[];
+    // var j=0;
     fetch("./access/json/listproduct.json")
     .then(function(response){
         if(!response.ok){
@@ -8,9 +13,12 @@ function LoadJson(){
     })
     .then(
         function(data){
+            // console.log(data);
             function showProduct(arrP,start,end,place) {
                 let html ="";
                 for(i=start;i<end;i++){
+ 
+                    // console.log(product1);
                     if(i>=arrP.length) break;
                     var s = 0;
                     s=arrP[i].Price-arrP[i].Discount*arrP[i].Price/100;
@@ -32,7 +40,7 @@ function LoadJson(){
                         discountTag+="</div>";
                     }
                     html+="<div class='col-xl-2 col-lg-3 col-4 product' id='"+arrP[i].MaSP+"'>";
-                    html+="<button class='home-product-item'  type='submit' name='maSp' id='"+arrP[i].MaSP+"' value='"+arrP[i].MaSP+"'>";
+                    html+="<button class='home-product-item w-100'  type='submit' name='maSp' id='"+arrP[i].MaSP+"' value='"+arrP[i].MaSP+"'>";
                     html+="<div class='home-product-item__img' style='background-image:url(./access/Img/sanpham/"+arrP[i].Hinhanh[0]+")'></div>";
                     html+="<h4 class='home-product-item__name'>"+arrP[i].TenSP+"</h4>";
                     html+=price;
@@ -54,13 +62,15 @@ function LoadJson(){
                     html+="</button>";
                     html+="</div>";
                     document.getElementById(place).innerHTML=html;
+
                 }
             }
-            showProduct(data,0,data.length,"total_product");
+            showProduct(data,0,data.length,"total_product");   
+            // showProduct(data,data.length-6,data.length,"new_product");
             const typeCategorys = document.querySelectorAll(".type_category");
             for(let i=0; i<typeCategorys.length;i++){
                 typeCategorys[i].onclick=function(){
-                    product=[];
+                    let product=[];
                     j=0;
                     var ma="";
                         switch (i){
@@ -79,14 +89,18 @@ function LoadJson(){
                     for(let p of data){
                         if(p.LoaiSP == ma){
                             product[j]=p;
+                            // product1[j]=p;
                             j++
                         }}
-                        showProduct(product,0,product.length,"total_product");    
+                    showProduct(product,0,product.length,"total_product");  
+                        // return product1;  
                 }
             }
             const btnCategory = document.getElementById("btn_list");
             btnCategory.onclick=function() {
-                product=[];
+                // product1[j]=arrP[i];
+                // const product1=[];
+                let product=[];
                 j=0;
                 let all_brand_check = document.querySelectorAll('input[class="brand_category"]:checked');
                 let all_price_check = document.querySelectorAll('input[class="price_category"]:checked');
@@ -98,6 +112,7 @@ function LoadJson(){
                             s=p.Price-p.Discount*p.Price/100;
                             if (s>(gia-100) && s<gia || s==gia) {
                                 product[j]=p;
+                                // product1[j]=p;
                                 j++;  
                             }
                         }
@@ -110,8 +125,9 @@ function LoadJson(){
                         if(all_price_check.length==0){
                             if(p.Hang==brand){
                                 product[j]=p;
+                                // product1[j]=p;
                                 j++;   
-                            }
+                            }   
                         }
                         if (p.Hang==brand) {
                             for(let y = 0 ; y<all_price_check.length;y++){
@@ -120,6 +136,7 @@ function LoadJson(){
                                 s=p.Price-p.Discount*p.Price/100;
                                 if (s>(gia-100) && s<gia || s==gia) {
                                     product[j]=p;
+                                    // product1[j]=p;
                                     j++;  
                                 }
                             }
@@ -129,7 +146,8 @@ function LoadJson(){
                 if(product.length==0){
                     document.getElementById("total_product").innerHTML="<h1 style='margin: auto;padding-top:50px;'>Không tìm thấy sản phẩm phù hợp</h1>";
                 }else{
-                showProduct(product,0,product.length,"total_product"); 
+                    console.log(product1[j]);
+                    showProduct(product,0,product.length,"total_product"); 
                 }  
             }
             function searchProduct(){
@@ -150,13 +168,13 @@ function LoadJson(){
                 showProduct(product,0,product.length,"total_product")
             }
             searchProduct() 
-            var i=0;
-            console.log(i);
-            i++
+            
         }
     )
     .catch(function(err){
         throw new Error(err.message);
     })
+    // console.log(product1);
     
 }
+

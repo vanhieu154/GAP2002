@@ -1,9 +1,11 @@
+
 function getUrlParams() {
     const params = new URLSearchParams (window.location.search);
     return params;
 }
 var maSp=getUrlParams().get("maSp");
 console.log(maSp);
+let product1=[];
 function LoadJson(){
     fetch("./access/json/listproduct.json")
     .then(function(response){
@@ -13,15 +15,7 @@ function LoadJson(){
         return response.json()
     })
     .then(
-        function(data){
-            const productdss=[];
-            var j=0;
-            for(p of data){
-                productdss[j]=p;
-                j++
-                // console.log(productdss);
-            }
-            // productdss=data;
+        function (data){
             let items="";
             let slider="";
             let productPrice="";
@@ -88,7 +82,7 @@ function LoadJson(){
                                     }
                                     
                                     html+="<div class='col-2 product' id='"+d.MaSP+"'>";
-                                    html+="<button class='home-product-item'  type='submit' name='maSp' id='"+d.MaSP+"' value='"+d.MaSP+"'>";
+                                    html+="<button class='home-product-item w-100'  type='submit' name='maSp' id='"+d.MaSP+"' value='"+d.MaSP+"'>";
                                     html+="<div class='home-product-item__img' style='background-image:url(./access/Img/sanpham/"+d.Hinhanh[0]+")'></div>";
                                     html+="<h4 class='home-product-item__name'>"+d.TenSP+"</h4>";
                                     html+=price;
@@ -125,16 +119,16 @@ function LoadJson(){
                     document.getElementById("curent_product").innerHTML=p.TenSP;
                     document.getElementById("total_product").innerHTML=html;
                     
-                return productdss;
                 
                 }
-                }
             }
+            }
+
         )
         .catch(function(err){
             throw new Error(err.message);
         })
-        }
+        }   
 let amountElement = document.getElementById('amount');
 let amount=amountElement.value;
 let render=(amount) =>{
@@ -148,6 +142,14 @@ let handleMinus=()=>{
     amount--;
     render(amount)
 }
+// var x=60
+// console.log(x);
+// let minus=()=>{
+//     x--;
+// console.log(x);
+
+// }
+setInterval(minus,1000);
 let showDescription=()=>{
     document.getElementById("product__description-detail").classList.toggle("activate");
     document.getElementById("minus-icon-1").classList.toggle("deactivate");
@@ -157,5 +159,13 @@ let showEvaluate=()=>{
     document.getElementById("product-evaluate").classList.toggle("activate");
     document.getElementById("minus-icon-2").classList.toggle("deactivate");
     document.getElementById("plus-icon-2").classList.toggle("activate");
+
 }
-console.log(productdss);
+function clickCounter() {
+    if (sessionStorage.clickcount) {
+      sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
+    } else {
+      sessionStorage.clickcount = 1;
+      }
+    console.log(sessionStorage.clickcount);
+  }
