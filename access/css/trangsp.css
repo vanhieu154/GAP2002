@@ -59,6 +59,7 @@ li{
 }
 .category_item >button{
     border: none;
+    font-weight: 500;
     background-color: #fff;
 }
 .category_item >button:hover{
@@ -92,6 +93,9 @@ li{
 
 }
 /* PRODUCT */
+.row{
+    /* justify-content: center; */
+}
 .home-product-item__img{
     border-radius: 5px;
 }

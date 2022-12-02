@@ -1,40 +1,6 @@
-// hiện header khi scoll lên
-var prevScrollpos = window.pageYOffset;
-window.onscroll = function() {
-  var currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) {
-    document.getElementById("header").style.top = "0";
-  } else {
-    document.getElementById("header").style.top = "-105px";
-    document.getElementById("header").style.marginTop = "0px";
-
-  }
-  prevScrollpos = currentScrollPos;
-}
-const nav = document.querySelector('.navbar')
-fetch('/header.html')
-.then(res=>res.text())
-.then(data=>{
-    nav.innerHTML=data
-})
-const footer = document.querySelector('.footer')
-fetch('/footer.html')
-.then(res=>res.text())
-.then(data=>{
-    footer  .innerHTML=data
-})
-
-
-
-
-// -------------- hàm đóng mở chung ---------------
-
-
-
-// --------------------------------Modal
+// --------------------------------Modal-------------------------------------
 const modal = document.querySelector(".js-modal");
 const modalClose = document.querySelector(".js-modal-close");
-const modalContainer = document.querySelector(".js-modal-container");
 function showModal() {
 modal.classList.add("open");
 }
@@ -43,28 +9,86 @@ modal.classList.remove("open");
 }
 showModal(); 
 modalClose.addEventListener("click", hideModal);
-// modal.addEventListener("click", hideModal);
-
-// ------------------------------------sub-nav-header-moblie------
-
-function showSubnav() {
-  document.getElementById("showSubnav").classList.toggle("activate");
+window.onclick = function(event) {
+  if (event.target.matches('.js-modal')) {
+    hideModal();
+  }
 }
-function showHeaderList() {
-  document.getElementById("header__list-container").classList.toggle("activate");
-}
-// ---------------- phần này suy nghĩ lại chỗ header bên phải để làm lại
+function LoadJson(){
+    fetch("./access/json/listproduct.json")
+    .then(function(response){
+        if(!response.ok){
+            throw new Error("có lỗi: (")
+        }
+        return response.json()
+    })
+    .then(
+        function(data){
+            function showProduct(arrP,start,end,place) {
+                let html ="";
+                for(i=start;i<end;i++){
+                    if(i>=arrP.length) break;
+                    var s = 0;
+                    s=arrP[i].Price-arrP[i].Discount*arrP[i].Price/100;
+                    let price ="";
+                    let discountTag="";
+                    if (arrP[i].Discount==0) {
+                        price+="<div class='home-product-item__price'>";
+                        price+="<span class='home-product-item__price-no-discount'>"+arrP[i].Price+",000đ</span>";
+                        price+="</div>";
+                    }else{
+                        price+="<div class='home-product-item__price'>";
+                        price+="<span class='home-product-item__price-current'>"+s+",000đ</span>";
+                        price+="<span class='home-product-item__price-old'>"+arrP[i].Price+",000đ</span>";
+                        price+="</div>";
+                        
+                        discountTag+="<div class='home-product-item__sale-off'>";
+                        discountTag+="<div class='home-product-item__sale-off-percent'>"+arrP[i].Discount+"%</div>";
+                        discountTag+="<div class='home-product-item__sale-off-label'>GIẢM</div>";
+                        discountTag+="</div>";
+                    }
+                    html+="<div class='col-xl-2 col-lg-3 col-4 product' id='"+arrP[i].MaSP+"'>";
+                    html+="<button class='home-product-item w-100'  type='submit' name='maSp' id='"+arrP[i].MaSP+"' value='"+arrP[i].MaSP+"'>";
+                    html+="<div class='home-product-item__img' style='background-image:url(./access/Img/sanpham/"+arrP[i].Hinhanh[0]+")'></div>";
+                    html+="<h4 class='home-product-item__name'>"+arrP[i].TenSP+"</h4>";
+                    html+=price;
+                    html+="<div class='home-product-item__action'>";
+                    html+="<span class='home-product-item__like home-product-item__like--liked'>";
+                    html+="<i class='home-product-item__like-icon-emty fa-regular fa-heart'></i>";
+                    html+="<i class='home-product-item__like-icon-fil fa-solid fa-heart'></i>";
+                    html+="</span>";
+                    html+="</div>";
+                    html+="<div class='home-product-item__origin'>";
+                    html+="<div class='home-product-item__grand'>"+arrP[i].Hang+"</div>";
+                    html+="<div class='home-product-item__origin-name'>Nhật bản</div>";
+                    html+="</div>";
+                    html+="<div class='home-product-item__favor'>";
+                    html+="<i class='fa-solid fa-check'></i>";
+                    html+="<span>Yêu thích</span>";
+                    html+="</div>";
+                    html+=discountTag;
+                    html+="</button>";
+                    html+="</div>";
+                    document.getElementById(place).innerHTML=html;
 
-// Close the dropdown menu if the user clicks outside of it
-// window.onclick = function(event) {
-//   if (!event.target.matches('.dropbtn')) {
-//     var dropdowns = document.getElementsByClassName("dropdown-content");
-//     var i;
-//     for (i = 0; i < dropdowns.length; i++) {
-//       var openDropdown = dropdowns[i];
-//       if (openDropdown.classList.contains('activate')) {
-//         openDropdown.classList.remove('activate');
-//       }
-//     }
-//   }
-// }
+                }
+            }
+            showProduct(data,data.length-6,data.length,"new_product");   
+            let product=[];
+            var j=0;
+            for(p of data){
+                if(p.Discount>0){
+                    product[j]=p;
+                    j++;   
+                    // localStorage.setItem('product',product[j]);
+                }
+            }
+            showProduct(product,0,product.length,"discount_product");   
+        }
+    )
+    .catch(function(err){
+        throw new Error(err.message);
+    })
+}
+console.log(localStorage.getItem('product'));
+localStorage.removeItem('product');

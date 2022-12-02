@@ -1,9 +1,4 @@
-
-
-
 function LoadJson(){
-    // const product1=[];
-    // var j=0;
     fetch("./access/json/listproduct.json")
     .then(function(response){
         if(!response.ok){
@@ -13,12 +8,9 @@ function LoadJson(){
     })
     .then(
         function(data){
-            // console.log(data);
             function showProduct(arrP,start,end,place) {
                 let html ="";
                 for(i=start;i<end;i++){
- 
-                    // console.log(product1);
                     if(i>=arrP.length) break;
                     var s = 0;
                     s=arrP[i].Price-arrP[i].Discount*arrP[i].Price/100;
@@ -26,12 +18,12 @@ function LoadJson(){
                     let discountTag="";
                     if (arrP[i].Discount==0) {
                         price+="<div class='home-product-item__price'>";
-                        price+="<span class='home-product-item__price-no-discount'>"+arrP[i].Price+".000đ</span>";
+                        price+="<span class='home-product-item__price-no-discount'>"+arrP[i].Price+",000đ</span>";
                         price+="</div>";
                     }else{
                         price+="<div class='home-product-item__price'>";
-                        price+="<span class='home-product-item__price-current'>"+s+".000đ</span>";
-                        price+="<span class='home-product-item__price-old'>"+arrP[i].Price+".000đ</span>";
+                        price+="<span class='home-product-item__price-current'>"+s+",000đ</span>";
+                        price+="<span class='home-product-item__price-old'>"+arrP[i].Price+",000đ</span>";
                         price+="</div>";
                         
                         discountTag+="<div class='home-product-item__sale-off'>";
@@ -66,7 +58,6 @@ function LoadJson(){
                 }
             }
             showProduct(data,0,data.length,"total_product");   
-            // showProduct(data,data.length-6,data.length,"new_product");
             const typeCategorys = document.querySelectorAll(".type_category");
             for(let i=0; i<typeCategorys.length;i++){
                 typeCategorys[i].onclick=function(){
@@ -89,17 +80,13 @@ function LoadJson(){
                     for(let p of data){
                         if(p.LoaiSP == ma){
                             product[j]=p;
-                            // product1[j]=p;
                             j++
                         }}
                     showProduct(product,0,product.length,"total_product");  
-                        // return product1;  
                 }
             }
             const btnCategory = document.getElementById("btn_list");
             btnCategory.onclick=function() {
-                // product1[j]=arrP[i];
-                // const product1=[];
                 let product=[];
                 var j=0;
                 let all_brand_check = document.querySelectorAll('input[class="brand_category"]:checked');
@@ -112,7 +99,6 @@ function LoadJson(){
                             s=p.Price-p.Discount*p.Price/100;
                             if (s>(gia-100) && s<gia || s==gia) {
                                 product[j]=p;
-                                // product1[j]=p;
                                 j++;  
                             }
                         }
@@ -125,7 +111,6 @@ function LoadJson(){
                         if(all_price_check.length==0){
                             if(p.Hang == brand){
                                 product[j]=p;
-                                // product1[j]=p;
                                 j++;   
                             }   
                         }
@@ -136,7 +121,6 @@ function LoadJson(){
                                 s=p.Price-p.Discount*p.Price/100;
                                 if ( s > (gia-100) && s < gia || s == gia ) {
                                     product[j]=p;
-                                    // product1[j]=p;
                                     j++;  
                                 }
                             }
@@ -148,6 +132,11 @@ function LoadJson(){
                 }else{
                     showProduct(product,0,product.length,"total_product"); 
                 }  
+            }
+            const btnAllproduct =document.getElementById("all-product");
+            btnAllproduct.onclick = function () {
+                console.log(data);
+                showProduct(data,0,data.length,"total_product");
             }
             function searchProduct(){
                 var arr=data;
@@ -167,13 +156,11 @@ function LoadJson(){
                 showProduct(product,0,product.length,"total_product")
             }
             searchProduct() 
-            
+
         }
     )
     .catch(function(err){
         throw new Error(err.message);
     })
-    // console.log(product1);
-    
 }
 

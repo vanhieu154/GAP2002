@@ -1,5 +1,7 @@
 dùng font-size : 62.5% 
 để đơn vị rem bằng 1/10px
 ví dụ 12 px là 1.2rem
-
 chưa làm trasition của ô mô tả tragn chi tiết
+marginTop :92px;
+từ tablet trở xuống thì thành 
+marginTop :128px
