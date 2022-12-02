@@ -4,8 +4,8 @@ function getUrlParams() {
     return params;
 }
 var maSp=getUrlParams().get("maSp");
-console.log(maSp);
-let product1=[];
+// console.log(maSp);
+// let product1=[];
 function LoadJson(){
     fetch("./access/json/listproduct.json")
     .then(function(response){
@@ -44,11 +44,11 @@ function LoadJson(){
                     }
 
                     if(p.Discount == 0){
-                        productPrice="<span class='product__price-current'>"+p.Price+".000đ</span>";
+                        productPrice="<span class='product__price-current'>"+p.Price+",000đ</span>";
                     }else{
                         productPrice="<span class='product__discount' >-"+p.Discount+"%</span>";
-                        productPrice+="<span class='product__price-current'>"+priceDisount+".000đ</span>";
-                        productPrice+="<span class='product__price-old'>"+p.Price+".000đ</span>";
+                        productPrice+="<span class='product__price-current'>"+priceDisount+",000đ</span>";
+                        productPrice+="<span class='product__price-old'>"+p.Price+",000đ</span>";
                     }
                     document.getElementById("product__price").innerHTML=productPrice;
                     for (let b = 0; b < Object.keys(p.Mota).length; b++) {
@@ -67,12 +67,12 @@ function LoadJson(){
                                     let discountTag="";
                                     if (d.Discount==0) {
                                         price+="<div class='home-product-item__price'>";
-                                        price+="<span class='home-product-item__price-no-discount'>"+d.Price+".000đ</span>";
+                                        price+="<span class='home-product-item__price-no-discount'>"+d.Price+",000đ</span>";
                                         price+="</div>";
                                     }else{
                                         price+="<div class='home-product-item__price'>";
-                                        price+="<span class='home-product-item__price-current'>"+s+".000đ</span>";
-                                        price+="<span class='home-product-item__price-old'>"+d.Price+".000đ</span>";
+                                        price+="<span class='home-product-item__price-current'>"+s+",000đ</span>";
+                                        price+="<span class='home-product-item__price-old'>"+d.Price+",000đ</span>";
                                         price+="</div>";
                                         
                                         discountTag+="<div class='home-product-item__sale-off'>";
@@ -119,7 +119,28 @@ function LoadJson(){
                     document.getElementById("curent_product").innerHTML=p.TenSP;
                     document.getElementById("total_product").innerHTML=html;
                     
-                
+                    document.getElementById("product__btn-add").onclick=function(){
+                        var addSP = sessionStorage.getItem('GioHang') ? JSON.parse(sessionStorage.getItem('GioHang')) : [];
+                        for(p of data){
+                            if(p.MaSP==maSp){
+                                    addSP[addSP.length]=p;
+                            }
+                        }
+                        // for(i =0;i <addSP.length-1;i++){
+                        //     for(j =i+1;j<addSP.length;j++){
+                        //         if(addSP[i].maSP == addSP[j].maSP)
+                        //             {
+                        //                 // addSP[i].quantity += addSP[j].quantity;
+                        //                 // addSP[i].total += addSP[j].total;
+                        //                 addSP.splice(j,1);
+                        //                 // console.log(addSP);
+                        //             }
+                        //     }
+                        // }
+                        sessionStorage.setItem('GioHang',JSON.stringify(addSP));
+                        console.log(sessionStorage.getItem('GioHang',JSON.stringify(addSP)));
+
+                    }
                 }
             }
             }
@@ -149,7 +170,7 @@ let handleMinus=()=>{
 // console.log(x);
 
 // }
-setInterval(minus,1000);
+// setInterval(minus,1000);
 let showDescription=()=>{
     document.getElementById("product__description-detail").classList.toggle("activate");
     document.getElementById("minus-icon-1").classList.toggle("deactivate");
@@ -161,11 +182,11 @@ let showEvaluate=()=>{
     document.getElementById("plus-icon-2").classList.toggle("activate");
 
 }
-function clickCounter() {
-    if (sessionStorage.clickcount) {
-      sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
-    } else {
-      sessionStorage.clickcount = 1;
-      }
-    console.log(sessionStorage.clickcount);
-  }
+// function clickCounter() {
+//     if (sessionStorage.clickcount) {
+//       sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
+//     } else {
+//       sessionStorage.clickcount = 1;
+//       }
+//     console.log(sessionStorage.clickcount);
+// }
