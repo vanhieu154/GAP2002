@@ -1,0 +1,100 @@
+/* CSS header top */
+.gap2002_container{
+    font-family: Quicksand;
+}
+.myaccount-top{
+    background-color: var(--lightpink);
+    padding: 5px ;
+    font-size: 12px;
+}
+.header-myaccount{
+    margin-top: 10px;
+    margin-left: 100px;
+}
+:root {
+    --lightpink: #d2beb4; 
+    --darkbrown:#6B4932;   
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+/* Tên tài khoản */
+.myaccount-body{
+    margin-top: 20px;
+    
+}
+.myaccount-body-left{
+    border-right: 2px solid var(--darkbrown);
+    height: 1000px;
+    margin-left: 5%;
+}
+/* Tài khoản của tôi */
+.icon-account-content{
+    margin-top: 10px;
+    padding-left: 10px;
+    text-align: left;
+}
+.tai-khoan-cua-toi ul,li{
+    list-style:none;
+    text-align:left;  
+}
+.btn{
+    width: 80%;
+    background-color: var(--lightpink);
+    text-align: left;
+    font-weight: bold;
+    color: white;
+}
+.content-detail{
+    cursor: pointer;
+}
+.content-detail:hover{
+    color: #a5704d;
+}
+.activeB{
+    display: none;
+}
+/* Thông báo */
+.top-1{
+    justify-content: space-around;
+    
+}
+.style_hr{
+    width: 86%;
+    border: 1px solid rosybrown;
+    background-color: rosybrown;;
+}
+.image1{
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    border: 1px solid rosybrown ;
+}
+.btn-viewdetail{
+    color: white;
+    width: 60%;
+    text-align: center;
+    margin-top: 6%;
+    font-weight: bold;
+}
+.don-hang-dong1 p{
+    text-align: left;
+    margin-top: 3%;
+}
+.dong1-image1{
+    text-align: right;
+}
+.dong1{
+    margin-bottom: 5%;
+}
+.don-hang-dong2{
+    text-align: left;
+}
+.dong2-image1{
+    text-align: right;
+    
+}
+.dong2 .btn-viewdetail{
+    margin-right: 22%;
+}
