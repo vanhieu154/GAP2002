@@ -5,3 +5,8 @@ chưa làm trasition của ô mô tả tragn chi tiết
 marginTop :92px;
 từ tablet trở xuống thì thành 
 marginTop :128px
+--à lô cái này mai lên nhóm mình chỉnh lần lun hen
+--Phần tài khoản của tôi chưa có liên kết bấm vào nút này thì hiện ra cái khác.
+--Với lại phần địa chỉ chưa có làm bấm vào tỉnh này thì lọc ra đc các huyện rồi các xã
+--Vẫn chưa làm lọc được các năm
+ 
