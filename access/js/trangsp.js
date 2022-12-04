@@ -141,7 +141,6 @@ function LoadJson(){
             }
             function searchProduct(){
                 var arr=data;
-                var s="";
                 let product =[];
                 var j=0;
                 function getUrlParams() {

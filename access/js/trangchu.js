@@ -7,7 +7,10 @@ modal.classList.add("open");
 function hideModal() {
 modal.classList.remove("open");
 }
-showModal(); 
+if(sessionStorage.getItem('showModal')!=1){
+    showModal(); 
+    sessionStorage.setItem('showModal',1);
+}
 modalClose.addEventListener("click", hideModal);
 window.onclick = function(event) {
   if (event.target.matches(".modal")) {

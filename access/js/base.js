@@ -151,13 +151,14 @@ function CheckLogin(){
   for(i =0; i<tmp.length;i++){
    if(NameDN === tmp[i].nameDK && tmp[i].pass === pass)
    {
-     CheckDangNhap=1;
-     tenDN=NameDN;
-     MKDN=pass;
-     alert("Đăng nhập thành công");
-     TenDangnhap = NameDN;
-     pass_dn = pass;
-     break;
+    sessionStorage.setItem('checkLogin',1);
+    // CheckDangNhap=1;
+    // tenDN=NameDN;
+    // MKDN=pass;
+    alert("Đăng nhập thành công");
+    // TenDangnhap = NameDN;
+    // pass_dn = pass;
+    break;
    }
    if(i == tmp.length-1)
    alert("Tài khoản không tồn tại. Mời đăng kí tài khoản để tiếp tục mua hàng");

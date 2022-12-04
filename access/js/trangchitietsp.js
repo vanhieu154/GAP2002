@@ -141,34 +141,40 @@ function LoadJson(){
                     document.getElementById("total_product").innerHTML=html;
                     
                     document.getElementById("product__btn-add").onclick=function(){
-                        var productQuantity=Number.parseInt(amount);
-                        // console.log(productQuantity);
-                        var addSP = sessionStorage.getItem("Cart") ? JSON.parse(sessionStorage.getItem("Cart")) : [];
-                        price = Number.parseInt(p.Price);
-                        for(p of data){
-                            if(p.MaSP==maSp){
-                                addSP[addSP.length] = p;
-                                addSP[addSP.length-1].quantity = productQuantity;
-                                if(p.Discount>0){
-                                    addSP[addSP.length-1].price = Number.parseInt(p.Price-p.Price*p.Discount/100);
-                                }else{
-                                    addSP[addSP.length-1].price = Number.parseInt(p.Price);
-                                }
-                                addSP[addSP.length-1].total = addSP[addSP.length-1].price*productQuantity ;
-                            }
-                        }
-                        for(i =0;i <addSP.length-1;i++){
-                            for(j =i+1;j<addSP.length;j++){
-                                if(addSP[i].MaSP == addSP[j].MaSP)
-                                    {
-                                        addSP[i].quantity += addSP[j].quantity;
-                                        addSP[i].total += addSP[j].total;
-                                        addSP.splice(j,1);
+                        if(sessionStorage.getItem('checkLogin')==1){
+                            var productQuantity=Number.parseInt(amount);
+                            // console.log(productQuantity);
+                            var addSP = sessionStorage.getItem("Cart") ? JSON.parse(sessionStorage.getItem("Cart")) : [];
+                            price = Number.parseInt(p.Price);
+                            for(p of data){
+                                if(p.MaSP==maSp){
+                                    addSP[addSP.length] = p;
+                                    addSP[addSP.length-1].quantity = productQuantity;
+                                    if(p.Discount>0){
+                                        addSP[addSP.length-1].price = Number.parseInt(p.Price-p.Price*p.Discount/100);
+                                    }else{
+                                        addSP[addSP.length-1].price = Number.parseInt(p.Price);
                                     }
+                                    addSP[addSP.length-1].total = addSP[addSP.length-1].price*productQuantity ;
+                                }
                             }
+                            for(i =0;i <addSP.length-1;i++){
+                                for(j =i+1;j<addSP.length;j++){
+                                    if(addSP[i].MaSP == addSP[j].MaSP)
+                                        {
+                                            addSP[i].quantity += addSP[j].quantity;
+                                            addSP[i].total += addSP[j].total;
+                                            addSP.splice(j,1);
+                                        }
+                                }
+                            }
+                            sessionStorage.setItem("Cart",JSON.stringify(addSP));
+                            console.log(sessionStorage.getItem("Cart",JSON.stringify(addSP)));
                         }
-                        sessionStorage.setItem("Cart",JSON.stringify(addSP));
-                        console.log(sessionStorage.getItem("Cart",JSON.stringify(addSP)));
+                        else{
+                            alert("Bạn chưa đăng nhập"); 
+                        }
+
                     }
                 }
             }
