@@ -121,4 +121,47 @@ window.onclick = function(event) {
       }
   }
 }
-
+var CheckDangNhap=0;
+function login(){
+  //alert("sddsd");
+  if(document.getElementById("user").value==""){
+    alert("ban chưa nhập tên đăng nhập");
+    document.getElementById("user").focus();
+  }
+  else if(document.getElementById("password").value==""){
+    alert("bạn chưa nhập mật khẩu");
+    document.getElementById("password").focus();
+  }
+  else{
+    CheckLogin();
+  }
+}
+function CheckLogin(){
+  var tmp = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')):[];
+  if(tmp.length == 0) {
+    alert("Tài khoản không tồn tại. Mời đăng kí tài khoản để tiếp tục mua hàng");
+    document.getElementById("user").value ="";
+    document.getElementById("password").value ="";
+    return false; 
+  }
+  var NameDN = document.getElementById("user").value;
+  var pass = document.getElementById("password").value;
+  console.log(NameDN);
+  console.log(tmp.length);
+  for(i =0; i<tmp.length;i++){
+   if(NameDN === tmp[i].nameDK && tmp[i].pass === pass)
+   {
+     CheckDangNhap=1;
+     tenDN=NameDN;
+     MKDN=pass;
+     alert("Đăng nhập thành công");
+     TenDangnhap = NameDN;
+     pass_dn = pass;
+     break;
+   }
+   if(i == tmp.length-1)
+   alert("Tài khoản không tồn tại. Mời đăng kí tài khoản để tiếp tục mua hàng");
+   document.getElementById("user").value ="";
+   document.getElementById("password").value ="";
+  }
+ }

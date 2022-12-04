@@ -32,11 +32,11 @@
             <form class="login-card-form" action="./otp.html" method="get">
                 <div class="form-item">
                     <span class="form-item-icon"><i class="fa-regular fa-user"></i></span>
-                    <input type="text" placeholder="Tên đăng nhập" autofocus required>
+                    <input type="text" placeholder="Tên đăng nhập" id="txt_name_dk" autofocus required >
                 </div>
                 <div class="form-item">
                     <span class="form-item-icon material-symbols-rounded">lock</span>
-                    <input type="password" placeholder="Mật khẩu"  required>
+                    <input type="password" id="passDK" placeholder="Mật khẩu"  required>
                 </div>
                 <div class="form-item">
                     <span class="form-item-icon material-symbols-rounded">lock</span>
@@ -44,7 +44,7 @@
                 </div>
                 <div class="form-item">
                     <span class="form-item-icon material-symbols-rounded">phone</span>
-                    <input type="phone" placeholder="Số điện thoại" required>
+                    <input type="phone" id="txt_phone" placeholder="Số điện thoại" required>
                 </div>
                 <div class="form-item" id="gender">
                     <div class="radio">
@@ -90,7 +90,7 @@
             <div class="back-to-main"><a href="./trangchu.html" id="back-to-main" >Quay lại trang chủ</a></div>
         </div>
     </div>
-
+    <script src="./access/js/dangky.js"></script>
 </body>
 
 </html>
