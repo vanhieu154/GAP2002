@@ -334,6 +334,7 @@ margin-bottom: 10px;
 /* Thông báo */
 .top-1{
     justify-content: space-around;
+    text-align: center;
     
 }
 .style_hr{
@@ -342,8 +343,8 @@ margin-bottom: 10px;
     background-color: rosybrown;;
 }
 .image1{
-    width: 100px;
-    height: 100px;
+    width: 80%;
+    height: 80%;
     border-radius: 10px;
     border: 1px solid rosybrown ;
 }
