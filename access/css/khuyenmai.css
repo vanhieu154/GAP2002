@@ -354,9 +354,23 @@ a{
 }
 .voucher-today{
     border: 2px solid #B5838D;
-    margin: 10px;
+    margin: 10px ;
 }
-
+.voucher-today__content h2{
+    font-weight: 700;
+}
+.voucher-today__content p{
+    font-size: 1.4rem;
+}
+.voucher-today-save{
+    background-color: #724F36;
+    border: none;
+    padding: 3px;
+    font-size: 1.6rem;
+    color: #fff;
+    padding: 2px 60px;
+    margin-bottom: 5px;
+}
 
 
 
