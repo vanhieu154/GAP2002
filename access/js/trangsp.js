@@ -1,3 +1,4 @@
+
 function LoadJson(){
     fetch("./access/json/listproduct.json")
     .then(function(response){
@@ -147,13 +148,25 @@ function LoadJson(){
                     const params = new URLSearchParams (window.location.search);
                     return params;
                 }
+                let cate=getUrlParams().get("header__category")
                 let searchProduct=getUrlParams().get("search-bar__input");
-                for (i = 0; i < arr.length; i++)
-                if ((arr[i].TenSP).toLowerCase().search(searchProduct.toLowerCase()) != -1) {
-                    product[j] = arr[i];
-                    j++;
+                for (i = 0; i < arr.length; i++){
+                    if(cate != ""){
+                        if(cate==arr[i].LoaiSP){
+                            product[j] = arr[i];
+                            j++;
+                        }
+                    }
+                    if(searchProduct != ""){
+                    if ((arr[i].TenSP).toLowerCase().search(searchProduct.toLowerCase()) != -1) {
+                        product[j] = arr[i];
+                        j++;
+                    }}
                 }
                 showProduct(product,0,product.length,"total_product")
+                getUrlParams().delete();
+                cate="";
+                searchProduct="";
             }
             searchProduct() 
 

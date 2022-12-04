@@ -15,10 +15,10 @@
                         <li class="">
                             <button class="header__list__sub-nav-link js-header__list__sub-nav-link" onclick="showSubnav()" >Sản Phẩm <i class="fa-solid fa-chevron-down"></i></button>
                             <ul id="showSubnav" class="sub-nav-menu js-sub-nav-menu">
-                                <li><a class="sub-nav-item" href="">Áo</a></li>
-                                <li><a class="sub-nav-item" href="">Đầm</a></li>
-                                <li><a class="sub-nav-item" href="">Quần</a></li>
-                                <li><a class="sub-nav-item" href="">Phụ kiện</a></li>
+                                <li><a class="sub-nav-item" href="./trangsp.html">Áo</a></li>
+                                <li><a class="sub-nav-item" href="./trangsp.html">Đầm</a></li>
+                                <li><a class="sub-nav-item" href="./trangsp.html">Quần</a></li>
+                                <li><a class="sub-nav-item" href="./trangsp.html">Phụ kiện</a></li>
                             </ul>      
                         </li>
                         <li><a href="">Blog</a></li>
@@ -40,10 +40,12 @@
                             <div class="">
                                 <a href="./trangsp.html">Sản Phẩm <i class="fa-solid fa-chevron-down"></i></a>
                                 <ul class="header__subnavbar">
-                                    <li><a class="header__subnavbar-item" href="">Áo</a></li>
-                                    <li><a class="header__subnavbar-item" href="">Đầm</a></li>
-                                    <li><a class="header__subnavbar-item" href="">Quần</a></li>
-                                    <li><a class="header__subnavbar-item" href="">Phụ kiện</a></li>
+                                    <form action="./trangsp.html" method="get" class="" id="cate__Product">
+                                        <li><button type="submit" class="w-100 header__subnavbar-item" name="header__category" value="Áo" >Áo</button></li>
+                                        <li><button type="submit" class="w-100 header__subnavbar-item" name="header__category" value="Váy">Váy</button></li>
+                                        <li><button type="submit" class="w-100 header__subnavbar-item" name="header__category" value="Quần">Quần</button></li>
+                                        <li><button type="submit" class="w-100 header__subnavbar-item" name="header__category" value="Phụ kiện">Phụ kiện</button></li>
+                                    </form>
                                 </ul>   
                             </div>  
                         </li>
@@ -76,7 +78,7 @@
                         <button class="box-icon"
                         type="button" data-bs-toggle="dropdown" aria-expanded="false"
                         >
-                            <span class="fa-solid fa-circle-user   "></span>
+                            <span class="fa-solid fa-circle-user"></span>
                         </button>
                             <div class="header__login dropdown-menu">
                                 <form action="">
@@ -274,7 +276,9 @@ ul{
 }
 
 .header__subnavbar-item{
-    padding: 10px !important;
+    /* text-align: center; */
+    border: none;
+    background-color: #fff;
 }
 
 .header__subnavbar li::after{
@@ -294,6 +298,16 @@ ul{
     /* border-bottom: solid 0.5px var(--white-color); */
     box-sizing: border-box;
 }
+.header__navbar>ul>li button{
+    display: block;
+    font-size: 15px;
+    font-weight: 550;
+    padding: 20px 0px;
+    position: relative;
+    color:var(--main-color);
+    /* border-bottom: solid 0.5px var(--white-color); */
+    box-sizing: border-box;
+}
 .header__navbar ul li a::after,
 .header__subnavbar-item::after{
     content: "";
@@ -306,7 +320,7 @@ ul{
 }
 
 .header__navbar ul li a:hover::after,
-.header__subnavbar li a:hover::after{
+.header__subnavbar li button:hover::after{
     width: 100%;
     left: 0;
     right: auto;
