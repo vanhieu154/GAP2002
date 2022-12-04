@@ -76,6 +76,7 @@ a{
     border-radius: 10px;
     margin: 30px;
     justify-content: space-around;
+    display: none;
     
 }
 .myaccount-body-right-top-wait-confirm p{

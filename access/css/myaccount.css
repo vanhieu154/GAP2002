@@ -1,5 +1,28 @@
 body{
-    font-family: 'Quicksand';
+    font-family: Quicksand;
+    overflow-x: hidden;
+    padding-bottom: 100px;
+}
+*{
+    font-size: 1.8rem;
+}
+
+.breadcrumb-item a{
+    font-size: 1.2rem;
+}
+.breadcrumb{
+    background-color: var(--lightpink);
+    padding: 5px ;
+    font-size: 1.2rem;
+    padding-left: 70px;
+    margin-top: 92px;
+}
+.breadcrumb>li{
+    font-size: 1.2rem;
+}
+a{
+    color: var(--black);
+    text-decoration: none;
 }
 /* CSS header top */
 .myaccount-top{
@@ -19,6 +42,9 @@ a{
     color: black;
     text-decoration: none;
 }
+.myaccount-body-right{
+    border-left: 1px solid black;
+}
 /* Tên tài khoản */
 .myaccount-body{
     margin-top: 20px;
@@ -26,7 +52,7 @@ a{
 }
 .myaccount-body-left{
     border-right: 2px solid var(--darkbrown);
-    height: 1000px;
+    
 }
 /* Tài khoản của tôi */
 .icon-account-content{
@@ -42,6 +68,7 @@ a{
     width: 80%;
     background-color: var(--lightpink);
     text-align: left;
+    font-size: 1.6rem;
 }
 .content-detail{
     cursor: pointer;
@@ -55,7 +82,7 @@ a{
 /* right form tài khoản của tôi*/
 .hs{
     margin-bottom: 10px;
-    
+    align-items: center;
 }
 .luu{
     width: 10%;
@@ -63,10 +90,13 @@ a{
     background-color: var(--lightpink);
     color: white;
 }
+.form-control{
+    font-size: 1.6rem;
+}
 .form__label{
     text-align: left;
     margin-left:10px;
-    margin-top: 10px;
+    /* margin-top: 10px; */
 }
 /* Hồ sơ của tôi */
 .luu2{
