@@ -4,3 +4,6 @@ if(butTon){
         document.querySelector(".btn-content").classList.toggle(("activeB"))
     })
 }
+function showProfile(){
+    
+}

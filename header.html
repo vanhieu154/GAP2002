@@ -23,8 +23,8 @@
                         </li>
                         <li><a href="">Blog</a></li>
                         <li><a href="./khuyenmai.html">Khuyến mãi</a></li>
-                        <li><a href="">Giới thiệu</a></li>
-                        <li><a href="">Liên hệ</a></li>
+                        <li><a href="./gioithieu.html">Giới thiệu</a></li>
+                        <li><a href="./lienhe.html">Liên hệ</a></li>
                     </ul>
                 </div>
             </div>
@@ -49,8 +49,8 @@
                         </li>
                         <li><a href="">Blog</a></li>
                         <li><a href="./khuyenmai.html">Khuyến mãi</a></li>
-                        <li><a href="">Giới thiệu</a></li>
-                        <li><a href="">Liên hệ</a></li>
+                        <li><a href="./gioithieu.html">Giới thiệu</a></li>
+                        <li><a href="./lienhe.html">Liên hệ</a></li>
                     </ul>
             </nav>
             <div class="header__icon">
@@ -89,7 +89,7 @@
                                         <input type="password"  placeholder="Mật khẩu" id="password">
                                     </div>
                                     <!-- <div class="btn-wrap header__login__confirm"> -->
-                                        <button class="btn ">
+                                        <button class="btn-header">
                                             Đăng nhập
                                         </button>
                                     <!-- </div> -->
@@ -99,13 +99,13 @@
                                         <div class="line"></div>
                                     </div>
                                     <div class="btn-wrap">
-                                        <button class="btn">
+                                        <button class="btn-header">
                                             <div class="socials-icon  ">
                                                 <i class="fa-brands fa-facebook"></i>
                                             </div>
                                             <div class="">Facebook</div>
                                         </button>
-                                        <button class="btn">
+                                        <button class="btn-header">
                                             <div class="socials-icon">
                                                 <i class="fa-brands fa-google"></i>
                                             </div>
@@ -135,8 +135,8 @@
                          <p class="home-product-item__price-current">0<u>đ</u></p>
                         </div>
                         <div class="header__cart_container-btn">
-                         <button class="btn" >Xem giỏ hàng</button>
-                         <button class="btn">Thanh toán</button>
+                         <button class="btn-header" >Xem giỏ hàng</button>
+                         <button class="btn-header">Thanh toán</button>
                         </div>
                      </div>
                 </div>
@@ -476,7 +476,7 @@ ul{
     display: flex;
     justify-content: space-between;
 }
-.btn{
+.btn-header{
     box-sizing: border-box;
     outline: none;
     border: 1px solid rgba(0,0,0,.26);
@@ -495,7 +495,7 @@ ul{
     flex: 1;
     margin: 5px 0;
 }
-.btn:hover .socials-icon i{
+.btn-header:hover .socials-icon i{
     color: var(--white-color);
 }
 .socials-icon i{
@@ -530,7 +530,7 @@ ul{
 .header__login__confirm{
     /* background-color: var(--main-color); */
 }
-.btn:hover {
+.btn-header:hover {
     width: 100%;
     left: 0;
     right: auto;
