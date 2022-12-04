@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     min-height: 100vh;
     background: linear-gradient(to right, #6B4932, #D2BEB4);
     display: flex;
@@ -22,12 +22,13 @@ body {
 }
 
 .header{
-    font-weight: bolder;
+    font-weight: bold;
 }
 
 .col-form-label{
     padding: 0px;
     align-items: center;
+    font-weight: bold;
 }
 .middle-text{
     padding: 20px;
@@ -61,4 +62,20 @@ button{
 button:hover {
     background-color: rgba(0, 0, 0, 0.85);
     cursor: pointer;
+}
+/* Responsive */
+@media (max-width: 400px) {
+
+
+    .container {
+        width: 320px;
+        height: 600px;
+        padding: 2rem;
+    }
+    .container label{
+        padding: 15px;
+    }
+    .container .middle-text{
+        padding: 15px;
+    }
 }
