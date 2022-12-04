@@ -1,5 +1,5 @@
 body{
-    background: linear-gradient(to right, #ffcdb2, #724f36e4);
+    background: linear-gradient(to right,#724f36e4, #D2BEB4);
     font-size: 1.6rem;
     margin-bottom: 40px;
 }
@@ -19,6 +19,10 @@ input{
     padding-left: 70px;
     margin-top: 30px;
 }
+.breadcrumb-item.active, .breadcrumb-item+.breadcrumb-item::before{
+    color: white;
+}
+
 .breadcrumb>li{
     font-size: 1.3rem;
 }
@@ -28,7 +32,6 @@ a{
 }
 
 /* header */
-
 
 .login-card-container{
     /* font-size: 1.6rem; */
