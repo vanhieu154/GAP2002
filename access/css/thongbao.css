@@ -44,7 +44,7 @@ a{
     background-color: var(--lightpink);
     text-align: left;
     font-weight: bold;
-    color: white;
+    color: black;
 }
 .content-detail{
     cursor: pointer;
@@ -72,7 +72,7 @@ a{
     border: 1px solid rosybrown ;
 }
 .btn-viewdetail{
-    color: white;
+    color: black;
     width: 60%;
     text-align: center;
     margin-top: 6%;
