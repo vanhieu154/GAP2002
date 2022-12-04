@@ -1,9 +1,30 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap'); */
+body{
+    background: linear-gradient(to right, #ffcdb2, #724f36e4);
+}
 
-body {
-    font-family: Quicksand;
-    min-height: 100vh;
-    background: linear-gradient(to right, #ffcdb2, #b5838d);
+/* CSS header top */
+.breadcrumb{
+    /* background-color: var(--lightpink); */
+    padding: 5px ;
+    font-size: 12px;
+    padding-left: 70px;
+    margin-top: 30px;
+}
+.breadcrumb>li{
+    font-size: 1.2rem;
+}
+a{
+    color: var(--black);
+    text-decoration: none;
+}
+
+/* header */
+
+
+.login-card-container{
+    /* font-size: 1.6rem; */
+    font-family: 'Quicksand';
+    /* min-height: 100vh; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,7 +45,6 @@ body {
     position: absolute;
     inset: 0;
     background: rgba(255, 255, 255, .15);
-    /* transform: rotate(-6deg); */
     border-radius: 10px;
     z-index: -1;
 }
@@ -91,9 +111,16 @@ body {
     font-size: calc(1rem * .8);
     margin-bottom: .5rem;
 }
-#gender{
+.form-item .radio{
+    display: flex;
     text-align: left;
+    padding-inline:10px;
+    page-break-inside: 10px;
 }
+input[type='radio']{
+    margin-right: 5px;
+}
+
 /* ---------- */
 
 /* Login Card Footer */
@@ -121,7 +148,21 @@ body {
     background: white;
 }
 
-.login-card button {
+.login-card .button {
+    display: flex;
+    /* background: #6B4932;
+    border: none;
+    color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: background .5s; */
+}
+
+button {
+    flex: 1;
     background: #6B4932;
     border: none;
     color: white;
@@ -133,7 +174,7 @@ body {
     transition: background .5s;
 }
 
-.login-card button:hover {
+button:hover {
     background-color: rgba(0, 0, 0, 0.85);
     cursor: pointer;
 }
@@ -174,24 +215,23 @@ body {
     transition: all .5s;
 }
 
-/* .login-card-social-btns a:hover {
-    background-color: rgb(196, 196, 196);
-    transform: scale(1.1);
-} */
 .fb1:hover {
     background-color: rgb(74, 114, 214);;
     transform: scale(1.1);
     color: white;
 }
+
 .gg1:hover{
     background-color: rgb(224, 68, 68);
     transform: scale(1.1);
     color: black;
 }
+
 .fb{
     color: rgb(74, 114, 214);
     font-weight: bold;
 }
+
 .gg{
     color: rgb(224, 68, 68);
     font-weight: bold;
@@ -204,22 +244,22 @@ body {
     display: flex;
     align-items: center;
     text-align: center;
-  }
+}
   
-  .separator::before,
-  .separator::after {
+.separator::before,
+.separator::after {
     content: '';
     flex: 1;
     border-bottom: 1px solid #000;
-  }
+}
   
-  .separator:not(:empty)::before {
+.separator:not(:empty)::before {
     margin-right: .25em;
-  }
+}
   
-  .separator:not(:empty)::after {
+.separator:not(:empty)::after {
     margin-left: .25em;
-  }
+}
 /* separator */
 
 .back-to-main {
@@ -239,12 +279,10 @@ body {
 /* Responsive */
 @media (max-width: 768px) {
 
-    body {
-        padding: 2rem 0;
-    }
 
     .login-card {
         width: 280px;
+        height: 700px;
         padding: 2rem;
     }
 
