@@ -67,11 +67,10 @@ a{
   border-radius: 20px;
   font-size: 1.6rem;
   font-weight: 600;
-}
-.product__size-size:hover{
   background-color: var(--btn-color);
   color: #fff;
 }
+
 .product__quantity-container{
   margin: 10px 0;
   display: inline-flex;
@@ -116,8 +115,9 @@ a{
 
 
 
-
-
+#amount{
+  border: none;
+}
 .product__btn-add-container{
   display: flex;
   flex-direction: row;

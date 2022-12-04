@@ -27,8 +27,8 @@
     <div class="body" >
       <nav aria-label="breadcrumb ">
         <ol class="breadcrumb ">
-          <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-          <li class="breadcrumb-item"><a href="#">Sản Phẩm</a></li>
+          <li class="breadcrumb-item"><a href="/trangchu.html">Trang chủ</a></li>
+          <li class="breadcrumb-item"><a href="/trangsp.html">Sản Phẩm</a></li>
           <li class="breadcrumb-item active" aria-current="page" id="curent_product"></li>
         </ol>
     </nav>
@@ -94,14 +94,14 @@
           <hr>
           <div class="product__size-container">
             <span class="product__size-label">Kích thước:</span>
-            <button class="product__size-size">L</button>
+            <button disabled class="product__size-size" id="product__size-size">L</button>
           </div>
           <div class="product__quantity-container">
             <span class="product__quantity-label">Số lượng:</span>
             <div class="product__quantity-quantity ">
-                <span onclick="handleMinus()"><i class="fa-solid fa-minus"></i></span>
-                <input  type="number" min="1" name="amount" id="amount" value="1">
-                <span onclick="handlePlus()"><i class="fa-solid fa-plus"></i></span>
+              <span id="minusProduct" onclick="handleMinus()"><i class="fa-solid fa-minus"></i></span>
+              <input  type="number" min="1" name="amount" id="amount" value="1">
+              <span id="plusProduct"><i class="fa-solid fa-plus"></i></span>
             </div>
           </div>
           <div class="product__btn-add-container">

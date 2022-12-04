@@ -214,6 +214,7 @@ a{
 }
 .product__header{
     margin: 30px 0;
+    text-align: center;
 }
 .home-product-item__img{
     border-radius: 5px;

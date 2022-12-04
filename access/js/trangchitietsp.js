@@ -6,13 +6,18 @@ function getUrlParams() {
 var maSp=getUrlParams().get("maSp");
 // console.log(maSp);
 // let product1=[];
+let amountElement = document.getElementById('amount');
+let amount=amountElement.value;
+let render=(amount) =>{
+    amountElement.value=amount;
+}
 function LoadJson(){
     fetch("./access/json/listproduct.json")
     .then(function(response){
         if(!response.ok){
             throw new Error("có lỗi: (")
         }
-        return response.json()
+        return response.json()  
     })
     .then(
         function (data){
@@ -111,6 +116,23 @@ function LoadJson(){
 
                         }
                     }
+                    document.getElementById("plusProduct").onclick=function(){
+                        if(amount>p.Soluong-1){
+                            amount=p.Soluong;
+                        }else{
+                        amount++;
+                        }
+                        render(amount);
+                    }
+                    document.getElementById("minusProduct").onclick=function(){
+                        if(amount<2) {
+                            amount =1;
+                        }else{
+                        amount--;
+                        }
+                        render(amount)
+                    }
+                    document.getElementById("product__size-size").innerHTML=p.Size;
                     document.getElementById("product-name").innerHTML=p.TenSP;
                     document.getElementById("product-brand").innerHTML=p.Hang;
                     document.getElementById("items").innerHTML=items;
@@ -120,26 +142,34 @@ function LoadJson(){
                     document.getElementById("total_product").innerHTML=html;
                     
                     document.getElementById("product__btn-add").onclick=function(){
-                        var addSP = sessionStorage.getItem('GioHang') ? JSON.parse(sessionStorage.getItem('GioHang')) : [];
+                        var productQuantity=Number.parseInt(amount);
+                        // console.log(productQuantity);
+                        var addSP = sessionStorage.getItem("Cart") ? JSON.parse(sessionStorage.getItem("Cart")) : [];
+                        price = Number.parseInt(p.Price);
                         for(p of data){
                             if(p.MaSP==maSp){
-                                    addSP[addSP.length]=p;
+                                addSP[addSP.length] = p;
+                                addSP[addSP.length-1].quantity = productQuantity;
+                                if(p.Discount>0){
+                                    addSP[addSP.length-1].price = Number.parseInt(p.Price-p.Price*p.Discount/100);
+                                }else{
+                                    addSP[addSP.length-1].price = Number.parseInt(p.Price);
+                                }
+                                addSP[addSP.length-1].total = addSP[addSP.length-1].price*productQuantity ;
                             }
                         }
-                        // for(i =0;i <addSP.length-1;i++){
-                        //     for(j =i+1;j<addSP.length;j++){
-                        //         if(addSP[i].maSP == addSP[j].maSP)
-                        //             {
-                        //                 // addSP[i].quantity += addSP[j].quantity;
-                        //                 // addSP[i].total += addSP[j].total;
-                        //                 addSP.splice(j,1);
-                        //                 // console.log(addSP);
-                        //             }
-                        //     }
-                        // }
-                        sessionStorage.setItem('GioHang',JSON.stringify(addSP));
-                        console.log(sessionStorage.getItem('GioHang',JSON.stringify(addSP)));
-
+                        for(i =0;i <addSP.length-1;i++){
+                            for(j =i+1;j<addSP.length;j++){
+                                if(addSP[i].MaSP == addSP[j].MaSP)
+                                    {
+                                        addSP[i].quantity += addSP[j].quantity;
+                                        addSP[i].total += addSP[j].total;
+                                        addSP.splice(j,1);
+                                    }
+                            }
+                        }
+                        sessionStorage.setItem("Cart",JSON.stringify(addSP));
+                        console.log(sessionStorage.getItem("Cart",JSON.stringify(addSP)));
                     }
                 }
             }
@@ -150,19 +180,6 @@ function LoadJson(){
             throw new Error(err.message);
         })
         }   
-let amountElement = document.getElementById('amount');
-let amount=amountElement.value;
-let render=(amount) =>{
-amountElement.value=amount
-}
-let handlePlus=()=>{
-    amount++;
-    render(amount);
-}
-let handleMinus=()=>{
-    amount--;
-    render(amount)
-}
 // var x=60
 // console.log(x);
 // let minus=()=>{
@@ -182,11 +199,4 @@ let showEvaluate=()=>{
     document.getElementById("plus-icon-2").classList.toggle("activate");
 
 }
-// function clickCounter() {
-//     if (sessionStorage.clickcount) {
-//       sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
-//     } else {
-//       sessionStorage.clickcount = 1;
-//       }
-//     console.log(sessionStorage.clickcount);
-// }
+

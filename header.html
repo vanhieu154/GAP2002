@@ -22,7 +22,7 @@
                             </ul>      
                         </li>
                         <li><a href="">Blog</a></li>
-                        <li><a href="">Khuyến mãi chào hè</a></li>
+                        <li><a href="./khuyenmai.html">Khuyến mãi</a></li>
                         <li><a href="">Giới thiệu</a></li>
                         <li><a href="">Liên hệ</a></li>
                     </ul>
@@ -48,7 +48,7 @@
                             </div>  
                         </li>
                         <li><a href="">Blog</a></li>
-                        <li><a href="">Khuyến mãi</a></li>
+                        <li><a href="./khuyenmai.html">Khuyến mãi</a></li>
                         <li><a href="">Giới thiệu</a></li>
                         <li><a href="">Liên hệ</a></li>
                     </ul>
@@ -86,7 +86,7 @@
                                         <input type="text" placeholder="Tài khoản" id="user" malgength="128">
                                     </div>
                                     <div class="header__login__nor">
-                                        <input type="text"  placeholder="Mật khẩu" id="password">
+                                        <input type="password"  placeholder="Mật khẩu" id="password">
                                     </div>
                                     <!-- <div class="btn-wrap header__login__confirm"> -->
                                         <button class="btn ">
@@ -128,44 +128,8 @@
                     </div>
                     <div class="header__cart" id="header__cart">
                         <h2>Giỏ hàng</h2> 
-                        <div class="cart_container">
-                             <svg style="color: var(--background-color)" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="cart-icon bi bi-cart2" viewBox="0 0 16 16">
-                                 <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
-                             </svg>
-                             <p>Hiện chưa có sản phẩm</p>
-                             <div class="row">
-                                 <div class="col-2">
-                                     <img class="w-100" src="./access/Img/sanpham/gap01/gap01_1.webp" alt="">
-                                 </div>
-                                 <div style="position: relative; text-align: left;" class="col-10">
-                                     <div class="header__cart-item__delete">
-                                         <i class="fa-solid fa-xmark"></i>
-                                     </div>
-                                     <div class="header__cart-item__infor">
-                                         <div class="header__cart-item__header">
-                                             Áo sơ mi nữ túi nút phía trước 
-                                         </div>
-                                         <div class="header__cart-item__price-container row">
-                                             <div class="col-7 " >
-                                                 <div class="header__cart-item__price">
-                                                     <span class="header__cart-item__price-current">,000<u>đ</u></span>
-                                                     <span class="header__cart-item__price-old">(,000đ)</span>
-                                                 </div>
-                                                 <div class="header__cart-item__quantity">
-                                                     <span onclick="handleMinus()"><i class="fa-solid fa-minus"></i></span>
-                                                     <input type="text" min="1" name="amount" id="amount" value="1">
-                                                     <span onclick="handlePlus()" ><i class="fa-solid fa-plus"></i></span>
-                                                 </div>
-                                             </div>
-                                             <div class="col-5" style="align-items: center;display:flex;justify-content: flex-end">
-                                                 <span class="header__cart-item__price-finnal">,000<u>đ</u></span>
-                                             </div>
-                                         </div>
-                                     </div>
-                                 </div>
-                             </div>
+                        <div class="header__cart-container" id="header__cart-container">
                         </div>
-                        <hr style="border: 2px solid;border-radius: 45px;background-color: #c6c6c6;color: #c6c6c6; opacity: 1;">
                         <div class="header__cart-money">
                          <p>Tổng tiền</p>
                          <p class="home-product-item__price-current">0<u>đ</u></p>
@@ -294,11 +258,6 @@
 .activate{
     display: block;
 }
-
-
-
-
-
 /* computer navbar */
 
 .header__navbar{
@@ -373,9 +332,7 @@ ul{
     background-color: var(--white-color);
     border: solid 1px var(--background-color);
     border-top: var(--white-color);
-
 }
-
 
 .logo   {
     max-width: 100%;
@@ -459,7 +416,6 @@ ul{
 .search{
     position: absolute;
     background-color: var(--white-color);
-
 }
 /* header login */
 .header__icon__login{
@@ -638,14 +594,11 @@ ul{
     border-radius: 10px;
     color: #fff;
 }
-.dropdown-menu[data-bs-popper].header__cart{
-    left: -390px;
-}
-.cart_container{
+.header__cart-container{
     margin-top: 25px;
     /* color: var(--background-color); */
 }
-.cart_container p{
+.header__cart-container p{
     margin: 15px 0 40px ;
 }
 .cart-icon{
@@ -722,6 +675,8 @@ ul{
     padding: 5px;
 }
 .header__cart-item__quantity input{
+    width: 40px;
+    text-align: center;
     border: none;
 }
 .header__cart-item__quantity span:hover{
@@ -747,3 +702,6 @@ ul{
     }
 }
 </style>
+<script>
+
+</script>
