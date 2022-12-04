@@ -17,11 +17,7 @@ a{
 }
 /* header */
 .voucher-hot__header{
-    position: relative;
-    margin-top: 50px;
-    margin-left: 100px;
-    width: 400px;
-    height: 50px;
+    margin-left: 50px;
 }
 .voucher-hot__header h1{
     padding: 22px  30px 22px 60px;
@@ -31,51 +27,14 @@ a{
     font-size: 3.2rem;
     line-height: 30px;
 }
-.voucher-hot__header__box1{
-    position: absolute;
-    width: 72px;
-    height: 56px;
-    border: 1px solid #B5838D;
-    top: 27px;
-    left: -32px;
-    z-index: -1;
-}
 
-.voucher-hot__header__box2{
-    position: absolute;
-    width: 200px;
-    height: 55px;
-    background: #D5BDAF;
-    top: -5px;
-    left: -5px;
-    z-index: -2;   
-}
-
-.voucher-hot__header__box3{
-    position: absolute;
-    width: 54px;
-    height: 55px;
-    background: #D5BDAF;
-    top: -17px;
-    left: 370px;
-    z-index: -1;
-}
-
-.voucher-hot__header__box4{
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    border: 1px solid #B5838D;
-    top: 23px;
-    left: 410px;
-}
 .row{
     justify-content: center;
     align-items: center;
     overflow: hidden;
 }
 .voucher-hot__100k{
-    margin-top: 60px ;
+    margin-top: 30px ;
     border: 2px solid #724F36;
 }
 
@@ -343,7 +302,9 @@ a{
     color: var(--white-color);
     font-weight: 600;
 }
-
+.voucher-today-header{
+    margin-left: 50px;
+}
 .voucher-today-container{
     margin-top: 30px;
     display: flex;
