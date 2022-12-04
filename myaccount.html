@@ -175,7 +175,7 @@
           </div>
           <div class="col-4">
               <br>
-              <p style="font-size: 18pt; color: blue; margin-left: 35%; cursor: pointer;">Cập nhật</p>
+              <p style="font-size: 1.6rem; color: blue; margin-left: 30%; cursor: pointer;">Cập nhật</p>
               <p class="setup">Thiết lập mặc định</p>
           </div>
           <hr>
@@ -188,7 +188,7 @@
           </div>
           <div class="col-4">
               <br>
-              <p style="font-size: 18pt; color: blue; cursor: pointer;"><span>Cập nhật</span> <span style="margin-left: 25%;">Xóa</span></p>
+              <p style="font-size: 1.6rem; color: blue; cursor: pointer;margin-left: 10%;"><span>Cập nhật</span> <span style="margin-left: 30%;">Xóa</span></p>
               <p class="setup">Thiết lập mặc định</p>
           </div>
           <hr>
@@ -373,7 +373,7 @@
       <div class="row">
         <div class="col"></div>
         <div class="col"></div>
-        <div class="col"><button type="button" class="btn btn-view">Xem chi tiết đơn hàng</button></div>
+        <div class="col"><button type="button" class="btn btn-view ">Xem chi tiết đơn hàng</button></div>
       </div>
     </div>
 
@@ -479,7 +479,7 @@
 </div>
 <div class="row dong1">
 <div class="col-2 dong1-image1"><img class="image1" src="./access/Img/sanpham/gap01/gap01_1.webp" alt=""></div>
-<div class="col don-hang-dong1">
+<div class="col-6 don-hang-dong1">
   <p><span style="font-weight: bold;"> Giao kiện hàng thành công</span> <br> 
   Đơn hàng #000001 đã giao thành công đến bạn <br>
 16:02 11-12-2022</p>
@@ -499,7 +499,7 @@
 <!-- sp dòng 3 -->
 <div class="row dong3">
 <div class="col-2 dong1-image1"><img class="image1" src="./access/Img/sanpham/gap01/gap01_1.webp" alt=""></div>
-<div class="col don-hang-dong1">
+<div class="col-6 don-hang-dong1">
   <p><span style="font-weight: bold;"> Thanh toán thành công</span> <br> 
   Đơn hàng #000001 đã thanh toán thành công đến bạn <br>
 16:02 11-12-2022</p>
@@ -507,7 +507,72 @@
 <div class="col"><button type="button" class="btn btn-viewdetail">Xem chi tiết</button></div>
 </div>
     </div>
-    
+      <!-- Xem chi tiết đơn hàng -->
+      <div class="row body__container--OrderDetail" style="display: none;">
+        <div class="row">
+          <div class="col return--orderdetail">
+            <p><iconify-icon icon="material-symbols:arrow-back-ios-rounded"></iconify-icon> Trở lại</p>
+          </div>
+          <div class="col-5">
+            <p>Mã đơn hàng:#000001 | <span style="color:red ;">ĐƠN HÀNG ĐÃ GIAO</span></p>
+          </div>
+        </div>
+        <hr class="hr__style--orderdetail">
+        <div class="row">
+          <div class="col"><p>Địa chỉ nhận hàng</p></div>
+          <div class="col-2"><p>#0000001</p></div>
+        </div>
+        <div class="row">
+          <div class="col-4 diachinhanhang-bottom">Họ và tên <br>Số điện thoại <br>Địa chỉ cụ thể</div>
+          <div class="col">
+            <ul style=" list-style-type:url(./access/Img/circle.png)">
+              <li style="color:#33A121;">Giao hàng thành công. Người nhận hàng: Võ Thị Nhung </li>
+              <li>Đang giao hàng</li>
+              <li>Đơn hàng đã được bàn giao đến đơn vị vận chuyển</li>
+              <li>Đơn hàng đã được đóng gói</li>
+              <li>Người gửi đang chuẩn bị đơn hàng</li>
+            </ul>
+          </div>
+        </div>
+        <p style="font-weight:bold">Tên shop</p>
+        <div class="row">
+          <div class="col-2"><img class="img__order--detail" src="./access/Img/sanpham/gap16/gap16_1.webp" alt=""></div>
+          <div class="col-6"><p>Váy nữ Dây kéo Xù màu trơn Giải trí <br>Số lượng:1</p></div>
+          <div class="col-4"><p><span style="color:red;font-size: larger;">120.00<sup>đ</sup></span><span style="text-decoration: line-through; color:darkgray">(155.00đ)</span></p></div>
+        </div>
+        <div class="row bottom__order--detail">
+          <div class="row style__bottom--top">
+            <div class="col-8 style__bottom">Tổng tiền hàng</div>
+            <div class="col red">120.000<sup>đ</sup></div>
+          </div>
+          <div class="row style__bottom--top1">
+            <div class="col-8 style__bottom">Phí vận chuyển</div>
+            <div class="col red">20.000<sup>đ</sup></div>
+          </div>
+          <div class="row style__bottom--top1">
+            <div class="col-8 style__bottom">Voucher từ shop</div>
+            <div class="col red">0<sup>đ</sup></div>
+          </div>
+          <div class="row style__bottom--top1">
+            <div class="col-8 style__bottom">Tổng số tiền</div>
+            <div class="col red" style="font-size: larger;">140.000<sup>đ</sup></div>
+          </div>
+          <div class="row style__bottom--top1">
+            <div class="col-8 style__bottom">Phương thức thanh toán</div>
+            <div class="col">Thanh toán khi nhận hàng (COD)</div>
+          </div>
+        </div>
+        <div class="row bottom-btn">
+          <div class="col"></div>
+          <div class="col"><button type="button" class="btn btn__order--detail">
+            Mua lại
+          </button></div>
+          <div class="col"></div>
+          </div>
+        
+        
+        
+      </div>
         </div>     
       </div>
       <script src="./access/js/myaccount.js"></script>

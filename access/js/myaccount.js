@@ -123,3 +123,9 @@ if(btnthongbao){
         document.querySelector(".body__container--thongbao").style.display="block"
     })
 }
+const view=document.querySelector(".btn-viewdetail");
+if(view){
+    view.addEventListener("click",function(){
+        document.querySelector(".body__container--OrderDetail").style.display="block"
+    })
+}

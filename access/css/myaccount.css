@@ -280,6 +280,7 @@ margin-bottom: 10px;
         font-size: large;
         font-weight: bolder;
 }
+
 /* Chờ xác nhận */
 .myaccount-body-right-top-wait-confirm{
     border: 2px solid rosybrown;
@@ -331,7 +332,6 @@ margin-bottom: 10px;
     border-radius: 10px;
 }
 /* Thông báo */
-/* Thông báo */
 .top-1{
     justify-content: space-around;
     text-align: center;
@@ -353,7 +353,7 @@ margin-bottom: 10px;
     width: 60%;
     text-align: center;
     margin-top: 6%;
-    ;
+    
 }
 .don-hang-dong1 p{
     text-align: left;
@@ -361,9 +361,6 @@ margin-bottom: 10px;
 }
 .dong1-image1{
     text-align: right;
-}
-.dong1{
-    margin-bottom: 5%;
 }
 .don-hang-dong2{
     text-align: left;
@@ -374,4 +371,46 @@ margin-bottom: 10px;
 }
 .dong2 .btn-viewdetail{
     margin-right: 22%;
+}
+/* Order detail */
+.body__container--OrderDetail{
+    margin: 20px;
+    padding: 20px;
+}
+.hr__style--orderdetail{
+    border-top:3px dashed #85556b;
+    
+}
+.diachinhanhang-bottom{
+    border-right:1px solid black;
+}
+.img__order--detail{
+    width: 80%;
+}
+.bottom__order--detail{
+    margin-top:15px ;
+}
+.style__bottom--top{
+    border-top: 1px solid darkslategrey;
+    border-bottom: 1px dashed darkslategrey;
+    padding: 10px;
+}
+.style__bottom{
+    text-align: right;
+    border-right: 1px dashed darkslategrey;
+}
+.style__bottom--top1{
+    border-bottom: 1px dashed darkslategrey;
+    padding: 10px;
+}
+.red{
+    color: red;
+}
+.bottom-btn{
+    margin-top: 10px;
+}
+.btn__order--detail{
+    text-align: center;
+    background-color: #6B4932;
+    color: white;
 }
