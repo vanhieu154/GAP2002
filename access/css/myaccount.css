@@ -262,3 +262,115 @@ margin-bottom: 10px;
     border: 1px solid var(--lightpink);
     text-align: center;
 }
+/* Order */
+/* right form Đơn hàng*/
+.myaccount-body-right-top{
+    margin: 50px 30px 0px 30px;
+    cursor: pointer; 
+}
+.myaccount-body-right-top-confirm{
+    width: auto;
+}
+.myaccount-body-right-top a{
+    color: black;
+    
+}
+.myaccount-body-right-top a:hover{
+        color: #a87b5d;
+        font-size: large;
+        font-weight: bolder;
+}
+/* Chờ xác nhận */
+.myaccount-body-right-top-wait-confirm{
+    border: 2px solid rosybrown;
+    border-radius: 10px;
+    margin: 30px;
+    justify-content: space-around;
+    display: none;
+    
+}
+.myaccount-body-right-top-wait-confirm p{
+    margin-top: 15px;
+}
+.hr_style{
+    width: 90%;
+    color: #6B4932;
+}
+.img-order{
+    width: 80px;
+    height: 88px;
+    border-radius: 10px;
+}
+.hrr__style{
+    border-top:3px dotted #6B4932;
+    width: 90%;
+}
+.col.information{
+    text-align: left;
+}
+.price{
+    margin-top: 3%;
+}
+.total__bill{
+    text-align: right;
+    margin-right: 10%;
+}
+.total__bill p{
+    font-size: 30px;
+}
+.total__bill span{
+    color: red;
+    font-size: 32px;
+}
+.btn-view{
+    text-align: center;
+    color: white;
+    padding: 5px;
+    background-color: var(--lightpink);   
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+/* Thông báo */
+/* Thông báo */
+.top-1{
+    justify-content: space-around;
+    
+}
+.style_hr{
+    width: 86%;
+    border: 1px solid rosybrown;
+    background-color: rosybrown;;
+}
+.image1{
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    border: 1px solid rosybrown ;
+}
+.btn-viewdetail{
+    color: black;
+    width: 60%;
+    text-align: center;
+    margin-top: 6%;
+    ;
+}
+.don-hang-dong1 p{
+    text-align: left;
+    margin-top: 3%;
+}
+.dong1-image1{
+    text-align: right;
+}
+.dong1{
+    margin-bottom: 5%;
+}
+.don-hang-dong2{
+    text-align: left;
+}
+.dong2-image1{
+    text-align: right;
+    
+}
+.dong2 .btn-viewdetail{
+    margin-right: 22%;
+}
