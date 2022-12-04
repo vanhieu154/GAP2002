@@ -43,7 +43,7 @@ a{
     width: 80%;
     background-color: var(--lightpink);
     text-align: left;
-    font-weight: bold;
+    
     color: black;
 }
 .content-detail{
@@ -76,7 +76,7 @@ a{
     width: 60%;
     text-align: center;
     margin-top: 6%;
-    font-weight: bold;
+    ;
 }
 .don-hang-dong1 p{
     text-align: left;
