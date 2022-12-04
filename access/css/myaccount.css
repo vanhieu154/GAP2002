@@ -1,5 +1,6 @@
 body{
     font-family: Quicksand;
+    overflow-x: hidden;
 }
 /* CSS header top */
 .myaccount-top{
