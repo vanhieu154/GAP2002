@@ -1,9 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
 body {
     font-family: 'Quicksand';
     min-height: 100vh;
-    background: linear-gradient(to right, #6B4932, #D2BEB4);
+    background: linear-gradient(to right, #724f36e4, #D2BEB4);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,6 +60,12 @@ button {
     text-transform: uppercase;
     letter-spacing: 2px;
     transition: background .5s;
+}
+
+button a{
+    text-decoration: none;
+    color: white;
+    font-weight: boldẻ;
 }
 
 button:hover {

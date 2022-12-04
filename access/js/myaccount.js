@@ -98,4 +98,28 @@ if(hoanhang){
         document.querySelector(".chua-co-don-hang").style.display="block"
     })
 } 
-
+// 
+const btnDonHang=document.querySelector(".btn__donhang");
+if(btnDonHang){
+    btnDonHang.addEventListener("click",function(){
+        document.querySelector(".body__container--hosocuatoi").style.display="none"
+        document.querySelector(".body__container--Order").style.display="block"
+        document.querySelector(".body__container--thongbao").style.display="none"
+    })
+}
+const btnhsct=document.querySelector(".btn__myaccount");
+if(btnhsct){
+    btnhsct.addEventListener("click",function(){
+        document.querySelector(".body__container--hosocuatoi").style.display="block"
+        document.querySelector(".body__container--Order").style.display="none"
+        document.querySelector(".body__container--thongbao").style.display="none"
+    })
+}
+const btnthongbao=document.querySelector(".btn__thongbao");
+if(btnthongbao){
+    btnthongbao.addEventListener("click",function(){
+        document.querySelector(".body__container--hosocuatoi").style.display="none"
+        document.querySelector(".body__container--Order").style.display="none"
+        document.querySelector(".body__container--thongbao").style.display="block"
+    })
+}
