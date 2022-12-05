@@ -33,6 +33,7 @@ function showHeaderList() {
 function showCart(){
   document.getElementById("header__cart").classList.toggle("activate");
   var cart=""; 
+  var totalPrice='';
   if(sessionStorage.getItem("Cart")==null){
   cart += "<svg style='color: var(--background-color)' xmlns='http://www.w3.org/2000/svg' width='50' height='50' fill='currentColor' class='cart-icon bi bi-cart2' viewBox='0 0 16 16'>";
   cart += "<path d='M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z'/>";
@@ -58,10 +59,10 @@ function showCart(){
       cart+="<div class='col-7'>"
       cart+="<div class='header__cart-item__price'>"
       if(p[i].Discount>0){
-        cart+="<span class='header__cart-item__price-current'>"+((p[i].Price-p[i].Price*p[i].Discount/100)*p[i].quantity)+",000<u>đ</u></span>"
-        cart+="<span class='header__cart-item__price-old'>("+((p[i].Price)*p[i].quantity)+",000đ)</span>"
+        cart+="<span class='header__cart-item__price-current'>"+((p[i].Price-p[i].Price*p[i].Discount/100)*p[i].quantity)+"<u>đ</u></span>"
+        cart+="<span class='header__cart-item__price-old'>("+((p[i].Price)*p[i].quantity)+"đ)</span>"
       }else{
-        cart+="<span class='header__cart-item__price-current'>"+((p[i].Price)*p[i].quantity)+",000<u>đ</u></span>"
+        cart+="<span class='header__cart-item__price-current'>"+((p[i].Price)*p[i].quantity)+"<u>đ</u></span>"
       }
       cart+="</div>"
       cart+="<div class='header__cart-item__quantity'>"
@@ -71,17 +72,17 @@ function showCart(){
       cart+="</div>"
       cart+="</div>"
       cart+="<div class='col-5' style='align-items: center;display:flex;justify-content: flex-end'>"
-      cart+="<span class='header__cart-item__price-finnal'>"+(p[i].Price-p[i].Price*p[i].Discount/100)*p[i].quantity+",000<u>đ</u></span>"
+      cart+="<span class='header__cart-item__price-finnal'>"+(p[i].Price-p[i].Price*p[i].Discount/100)*p[i].quantity+"<u>đ</u></span>"
       cart+="</div>"
       cart+="</div>"  
       cart+="</div>"
       cart+="</div>"
       cart+="</div>"
       cart+="<hr style='border: 2px solid;border-radius: 45px;background-color: #c6c6c6;color: #c6c6c6; opacity: 1;'>"
-
     }
-
+    totalPrice+='<span>'+pay+'<u>đ</u></span>';
   }
+  document.getElementById("home-product-item__price-current").innerHTML=totalPrice;
   document.getElementById("header__cart-container").innerHTML=cart;
   const plusP=document.querySelectorAll(".header__cart-item-plus");
   const amountP=document.querySelectorAll(".header__cart-item-amount");

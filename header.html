@@ -91,11 +91,11 @@
                         </div>
                         <div class="header__cart-money">
                          <p>Tổng tiền</p>
-                         <p class="home-product-item__price-current">0<u>đ</u></p>
+                         <p class="home-product-item__price-current" id="home-product-item__price-current"></p>
                         </div>
                         <div class="header__cart_container-btn">
-                         <button class="btn-header" >Xem giỏ hàng</button>
-                         <button class="btn-header">Thanh toán</button>
+                         <button class="btn-header"><a href="./giohangtrong.html">Xem giỏ hàng</a></button>
+                         <button class="btn-header"><a href="./thanhtoan.html">Thanh toán</a></button>
                         </div>
                      </div>
                 </div>
@@ -112,6 +112,14 @@
 </nav>        
 <style>
             /* ---------------------top header------------------ */
+
+.header__cart_container-btn  a{
+    color: #333;
+}
+.header__cart_container-btn a:hover  {
+    color: #fff;
+}
+
 .top_header{
     height: 30px;
     width: 100%;
@@ -124,7 +132,9 @@
 .top_header p{
     padding-top: 5px;
 }
-
+.home-product-item__price-current{
+    color: red;
+}
 
 
 

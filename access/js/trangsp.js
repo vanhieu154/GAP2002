@@ -19,12 +19,12 @@ function LoadJson(){
                     let discountTag="";
                     if (arrP[i].Discount==0) {
                         price+="<div class='home-product-item__price'>";
-                        price+="<span class='home-product-item__price-no-discount'>"+arrP[i].Price+",000đ</span>";
+                        price+="<span class='home-product-item__price-no-discount'>"+arrP[i].Price+"đ</span>";
                         price+="</div>";
                     }else{
                         price+="<div class='home-product-item__price'>";
-                        price+="<span class='home-product-item__price-current'>"+s+",000đ</span>";
-                        price+="<span class='home-product-item__price-old'>"+arrP[i].Price+",000đ</span>";
+                        price+="<span class='home-product-item__price-current'>"+s+"đ</span>";
+                        price+="<span class='home-product-item__price-old'>"+arrP[i].Price+"đ</span>";
                         price+="</div>";
                         
                         discountTag+="<div class='home-product-item__sale-off'>";

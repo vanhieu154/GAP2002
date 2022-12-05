@@ -48,11 +48,11 @@ function LoadJson(){
                     }
 
                     if(p.Discount == 0){
-                        productPrice="<span class='product__price-current'>"+p.Price+",000đ</span>";
+                        productPrice="<span class='product__price-current'>"+p.Price+"đ</span>";
                     }else{
                         productPrice="<span class='product__discount' >-"+p.Discount+"%</span>";
-                        productPrice+="<span class='product__price-current'>"+priceDisount+",000đ</span>";
-                        productPrice+="<span class='product__price-old'>"+p.Price+",000đ</span>";
+                        productPrice+="<span class='product__price-current'>"+priceDisount+"đ</span>";
+                        productPrice+="<span class='product__price-old'>"+p.Price+"đ</span>";
                     }
                     document.getElementById("product__price").innerHTML=productPrice;
                     for (let b = 0; b < Object.keys(p.Mota).length; b++) {
@@ -71,12 +71,12 @@ function LoadJson(){
                                     let discountTag="";
                                     if (d.Discount==0) {
                                         price+="<div class='home-product-item__price'>";
-                                        price+="<span class='home-product-item__price-no-discount'>"+d.Price+",000đ</span>";
+                                        price+="<span class='home-product-item__price-no-discount'>"+d.Price+"đ</span>";
                                         price+="</div>";
                                     }else{
                                         price+="<div class='home-product-item__price'>";
-                                        price+="<span class='home-product-item__price-current'>"+s+",000đ</span>";
-                                        price+="<span class='home-product-item__price-old'>"+d.Price+",000đ</span>";
+                                        price+="<span class='home-product-item__price-current'>"+s+"đ</span>";
+                                        price+="<span class='home-product-item__price-old'>"+d.Price+"đ</span>";
                                         price+="</div>";
                                         
                                         discountTag+="<div class='home-product-item__sale-off'>";
