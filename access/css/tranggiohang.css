@@ -1,5 +1,6 @@
-*{
-    padding: 10px;
+.body{
+    margin: 92px 0;
+    overflow-x: hidden;
 }
 :root {
     --darkpink: #b8a898;
@@ -8,12 +9,14 @@
     --black: black;
     --white: #ffffff;
     --grey: #ADA9A9;
-  }
-  .align{
-    align-items: center;
-  }
+}
 .title{
     color: var(--darkbrown);
+    font-weight: 700;
+    text-align: center;
+}
+*{
+    font-size: 1.6rem;
 }
 .sosanpham{
     color: var(--darkpink);
@@ -47,6 +50,13 @@ a{
     text-decoration: none;
 }
 
+.thanhtoan a{
+    text-decoration: none;
+    color: #000000;
+}
+.thanhtoan a:hover{
+    color: #ffffff;
+}
 .buy-btn{
     display: flex;
     align-items: center;
@@ -61,18 +71,24 @@ a{
     padding: 30px;
 }
 .bar{
-position: absolute;
-width: 70px;
-height: 0%;
-padding-top: 0px;
-padding-bottom: 0px;
-margin-top: 5px;
-left: 46.5%;
-color: #000000;
-border: 2px solid #000000;
+    width: 70px;
+    height: 0%;
+    margin:auto;
+    padding: auto;
+    background-color: #000000;
+    border: 2px solid #000000;
 
 } 
 .borderbox{
     border: var(--grey) solid 1px;
     
+}
+.row{
+    justify-content: center;
+}
+.cart__container{
+    margin-top: 40px;
+}
+.cart-info__container{
+    max-width: 450px;
 }

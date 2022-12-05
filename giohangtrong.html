@@ -14,43 +14,50 @@
     <link rel="stylesheet" href="./access/css/tranggiohang.css">
     <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      window.onload = function () {
+        showCartPage();
+      }
+  </script>
   </head>
-  <nav class="navbar"></nav>
   <body class="">
-    <div class="">
+    <nav class="navbar"></nav>
+    <div class="body">
       <div class="row text-center">
-      <div class="col ">
-        
-       <h2 class= "text-left title">Giỏ hàng của bạn </h2> 
-         Có<span class="sosanpham">0 sản phẩm</span>trong giỏ hàng
-         <div class="bar"></div>
+        <div class="col ">
+       <h1 class= "text-left cart__header">Giỏ hàng của bạn </h1> 
+        <p> Có <span class="sosanpham" id="sosanpham">0 sản phẩm</span>  trong giỏ hàng</p>
+        <div class="bar"></div>
       </div>
-      
       </div>
-      <div class="row" >
-      <h5 class="col-5" style="padding-left: 40px;">Giỏ hàng của bạn đang trống</h5>
-      <div class="col-5 " style="margin-left: 60px ;">
+      <div class="row cart__container" >
+      <div class="col-6 row" id="cart__item__container">
+
+      </div>
+      <div class="col-6 cart-info__container" style="margin-left: 60px ;" >
         <div class="borderbox order-infor"> 
-          <h5 class="col title" >Thông tin đơn hàng </h5> 
+          <h2 class="title" style="margin-bottom: 30px">Thông tin đơn hàng </h2> 
           <hr>
-           <div class="container row">
-             <div class="col-4"> Tổng tiền: </div> 
-           <h4 class="col-8 sotien"> 0đ</h4> 
-           </div> <hr>
-          <div class="col"> Phí vận chuyển sẽ được tính ở trang thanh toán. 
-            Bạn cũng có thể nhập mã giảm giá ở trang thanh toán.</div> <br>
-          <div class=" col-10 button thanhtoan text-center" style="align-items: center;" > THANH TOÁN </div> <br>
+           <div style="margin: 20px 0"  class="container row">
+              <div class="col-4"> Tổng tiền: </div> 
+              <h4 class="col-8 sotien" id="sotien">0<u>đ</u></h4> 
+           </div>
+          <hr>
+          <div class="col" style="margin: 20px 0"> 
+            <p>Phí vận chuyển sẽ được tính ở trang thanh toán.</p> 
+            <p>Bạn cũng có thể nhập mã giảm giá ở trang thanh toán.</p></div> <br>
+          <div class=" col-10 button thanhtoan text-center" style="align-items: center;" ><a href="./thanhtoan.html"> THANH TOÁN </a></div> <br>
           <div class="col buy-btn" > 
             <iconify-icon class="text-right " icon="ion:return-up-back-sharp" width="25" height="25" ></iconify-icon>
-             <a href="#"  class=""> Tiếp tục mua hàng </a> 
+             <a href="./trangsp.html"  class=""> Tiếp tục mua hàng </a> 
           </div>
-      
         </div>
       </div>
       </div>
         
     </div>
     <div class="footer"></div>
+    <script src="./access/js/giohang.js"></script>
    <script src="./access/js/base.js"></script> 
   </body>
 </html>
