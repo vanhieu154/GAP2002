@@ -45,6 +45,12 @@ a{
 .myaccount-body-right{
     border-left: 1px solid black;
 }
+.icon-account-content{
+    cursor: pointer;
+}   
+.icon-account{
+    cursor: pointer;
+}
 /* Tên tài khoản */
 .myaccount-body{
     margin-top: 20px;
@@ -416,4 +422,8 @@ margin-bottom: 10px;
 }
 .return--orderdetail{
     cursor: pointer;
+}
+/* Reponsive */
+@media screen {
+    
 }

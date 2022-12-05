@@ -6,8 +6,7 @@ marginTop :92px;
 note: đổi font chữ header và footer
 từ tablet trở xuống thì thành 
 marginTop :128px
---à lô cái này mai lên nhóm mình chỉnh lần lun hen
---Phần tài khoản của tôi chưa có liên kết bấm vào nút này thì hiện ra cái khác.
+
 --Với lại phần địa chỉ chưa có làm bấm vào tỉnh này thì lọc ra đc các huyện rồi các xã
 --Vẫn chưa làm lọc được các năm
 --phần bấm vào từng trạng thái giao hàng làm lướt lướt đẹp như cái header
