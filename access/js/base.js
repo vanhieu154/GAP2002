@@ -108,22 +108,78 @@ function showCart(){
     }
   }
 }
-
-window.onclick = function(event) {
-  if (!event.target.matches(".fa-cart-shopping,.cart_container,.fa-xmark,.header__cart-item-plus,.header__cart-item-minus,.header__cart-item-amount,.fa-minus,.fa-plus")){
-      var dropdowns = document.getElementsByClassName("header__cart");
-      var i;
-      for (i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains("activate")) {
-            openDropdown.classList.remove("activate");  
-          }
-      }
+function showLogin() {
+  document.getElementById("header__login-container").classList.toggle("activate");
+  let html="";
+  if(sessionStorage.getItem('checkLogin') == 1){
+    html+='<div class="header__login2">';
+    html+='<ul>';
+    html+='<li><a class="header__login-item" href="#"> Tài khoản của tôi</a></li>';
+    html+='<li><a class="header__login-item" href="#"> Đơn hàng</a></li>';
+    html+='<li><a class="header__login-item" href="#"> Thông báo</a></li>';
+    html+='<li><a class="header__login-item" href="#"> Kho voucher</a></li>';
+    html+='<li><a class="header__login-item" href="#"> Đăng xuất</a></li>';
+    html+='</ul>';
+    html+='</div>';
+  }else{
+    html+='<div class="header__login">';
+    html+='<!-- <form > -->';
+    html+='<h2>ĐĂNG NHẬP TÀI KHOẢN</h2>';
+    html+='<p>Nhập tài khoản và mật khẩu của bạn</p>';
+    html+='<div class="header__login__nor">';
+    html+='<input type="text" placeholder="Tài khoản" id="user" malgength="128">';
+    html+='</div>';
+    html+='<div class="header__login__nor">';
+    html+='<input type="password"  placeholder="Mật khẩu" id="password">';
+    html+='</div>';
+    html+='<!-- <div class="btn-wrap header__login__confirm"> -->';
+    html+='<button class="btn-header"  onclick="login()">Đăng nhập</button>';
+    html+='<!-- </div> -->';
+    html+='<div class="header__or">';
+    html+='<div class="line"></div>';
+    html+='<span class="or">hoặc</span>';
+    html+='<div class="line"></div>';
+    html+='</div>';
+    html+='<div class="btn-wrap">';
+    html+='<button class="btn-header">';
+    html+='<div class="socials-icon  ">';
+    html+='<i class="fa-brands fa-facebook"></i>';
+    html+='</div>';
+    html+='<div class="">Facebook</div>';
+    html+='</button>';
+    html+='<button class="btn-header">';
+    html+='<div class="socials-icon">';
+    html+='<i class="fa-brands fa-google"></i>';
+    html+='</div>';
+    html+='<div class="">Google</div>';
+    html+='</button>';
+    html+='</div>';
+    html+='<div class="header__login__footer">';
+    html+='Khách hàng mới? <a class="create-account" href="./dangky.html">Tạo tài khoản</a>';
+    html+='</div>';
+    html+='<div class="header__login__footer">';
+    html+='Quên mật khẩu? <a href="./quenmatkhau.html" class="restore-pass">Khôi phục mật khẩu</a>';
+    html+='</div>';
+    html+='<!-- </form> -->';
+    html+='</div>';
   }
+  document.getElementById('header__login-container').innerHTML=html;
+  // console.log(document.getElementById('header__login-container'));
+}
+window.onclick = function(event) {
+  if (!event.target.matches('.fa-cart-shopping,.cart_container,.fa-xmark,.header__cart-item-plus,.header__cart-item-minus,.header__cart-item-amount,.fa-minus,.fa-plus')){
+    var dropdowns = document.getElementsByClassName("header__cart");
+    for (let i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains("activate")) {
+          openDropdown.classList.remove("activate");  
+        } 
+    }
+  }
+
 }
 var CheckDangNhap=0;
 function login(){
-  //alert("sddsd");
   if(document.getElementById("user").value==""){
     alert("ban chưa nhập tên đăng nhập");
     document.getElementById("user").focus();
@@ -136,8 +192,14 @@ function login(){
     CheckLogin();
   }
 }
+function user( phone, nameDK, pass){
+  this.phone =phone;
+  this.nameDK =nameDK;
+  this.pass = pass;
+}
 function CheckLogin(){
   var tmp = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')):[];
+  var loginAccount = sessionStorage.getItem('loginAccount') ? JSON.parse(sessionStorage.getItem('loginAccount')):[];
   if(tmp.length == 0) {
     alert("Tài khoản không tồn tại. Mời đăng kí tài khoản để tiếp tục mua hàng");
     document.getElementById("user").value ="";
@@ -151,13 +213,18 @@ function CheckLogin(){
   for(i =0; i<tmp.length;i++){
    if(NameDN === tmp[i].nameDK && tmp[i].pass === pass)
    {
+    var tmp1 = new user(tmp[i].phone,tmp[i].nameDK,tmp[i].pass);
+    loginAccount.push(tmp1)
+    sessionStorage.setItem('loginAccount',JSON.stringify(loginAccount));
     sessionStorage.setItem('checkLogin',1);
-    // CheckDangNhap=1;
-    // tenDN=NameDN;
-    // MKDN=pass;
     alert("Đăng nhập thành công");
-    // TenDangnhap = NameDN;
-    // pass_dn = pass;
+    let dropdowns1 = document.getElementsByClassName('header__login-container');
+    for (let i = 0; i < dropdowns1.length; i++) {
+      var openDropdown1 = dropdowns1[i];
+      if (openDropdown1.classList.contains("activate")) {
+          openDropdown1.classList.remove("activate");  
+      } 
+    }
     break;
    }
    if(i == tmp.length-1)
