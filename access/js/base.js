@@ -232,4 +232,5 @@ function CheckLogin(){
    document.getElementById("user").value ="";
    document.getElementById("password").value ="";
   }
- }
+}
+

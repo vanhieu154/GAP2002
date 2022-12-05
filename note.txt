@@ -11,3 +11,10 @@ marginTop :128px
 --Vẫn chưa làm lọc được các năm
 --phần bấm vào từng trạng thái giao hàng làm lướt lướt đẹp như cái header
 mã thành công của otp là 012345
+cách thêm header footer vào trang
+b1: link base.js vào trang
+b2: link base.css vào trang
+b3: cho dòng này lên đầu trang 
+        <nav class="navbar"></nav>
+b4: cho dòng này vào cuối trang:
+        <div class="footer"></div>
