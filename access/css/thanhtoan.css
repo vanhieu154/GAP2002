@@ -4,11 +4,8 @@
     font-family: Quicksand;
     font-size: 1.6rem;
 }
-textarea.form-control,input.form-control,select.form-select {
+input{
     font-size: 1.6rem;
-}
-.body{
-    margin-top: 92px;
 }
 .col--left{
     padding-left: 70px;
@@ -48,15 +45,6 @@ a{
     color: var(--black);
     text-decoration: none;
 }
-.breadcrumb{
-    background-color: var(--lightpink);
-    padding: 5px ;
-    font-size: 12px;
-    padding-left: 70px;
-}
-.breadcrumb>li{
-    font-size: 1.6rem;
-}
 .button--gui__position{
     text-align: right;
 }
@@ -68,7 +56,9 @@ a{
     padding-left: 40px; 
     padding-right: 40px;
     padding-top: 10px;
-    padding-bottom: 10px;  
+    padding-bottom: 10px;
+   
+    
 } 
 .button--gui:hover{
     background-color: var(--darkbrown);
@@ -152,9 +142,9 @@ padding-right: 20px;
 .lienhe span{
     margin-left: 10px;
 }
-/* img{
+img{
     position: relative;
-} */
+}
 .icon--soluong{
 position: absolute;
 margin-left: -15px;

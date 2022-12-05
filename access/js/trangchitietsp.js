@@ -141,7 +141,7 @@ function LoadJson(){
                     document.getElementById("total_product").innerHTML=html;
                     
                     document.getElementById("product__btn-add").onclick=function(){
-                        if(sessionStorage.getItem('checkLogin') == 1){
+                        if(sessionStorage.getItem('checkLogin')==1){
                             var productQuantity=Number.parseInt(amount);
                             // console.log(productQuantity);
                             var addSP = sessionStorage.getItem("Cart") ? JSON.parse(sessionStorage.getItem("Cart")) : [];

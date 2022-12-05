@@ -32,7 +32,7 @@ function dangky(){
     alert("mật khẩu nhập lại chưa trùng khớp");
     document.getElementById("passDK2").focus();
   }
-  else if(document.getElementById("txt_phone").value == "" ){
+  else if(document.getElementById("txt_phone").value=="" ){
     alert("Bạn chưa nhập số điện thoại");
     document.getElementById("txt_phone").focus();
   }
@@ -44,6 +44,7 @@ function dangky(){
   else{
   check();
  }
+
 }
 function check(){
     var temp= localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')):[];
