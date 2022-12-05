@@ -281,5 +281,5 @@ function toProductPage(a) {
 }
 function pSearch(){
   let pS=document.getElementById('search-bar__input').value;
-  sessionStorage.setItem('pSearch',pS);
+  sessionStorage.setItem('pSearch',pS); 
 }
