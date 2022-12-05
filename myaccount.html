@@ -208,9 +208,15 @@
                   <div class="col"><input type="text" class="form-control" id="phonenumber" placeholder="Số điện thoại" name="phonenumber"></div>
               </div>
               <div class="row dong-2">
-                  <div class="col"><input type="text" class="form-control" id="tinh" placeholder="Tỉnh/Thành phố" name="tinh"></div>
-                  <div class="col"><input type="text" class="form-control" id="huyen" placeholder="Quận/Huyện" name="huyen"></div>
-                  <div class="col"><input type="text" class="form-control" id="xa" placeholder="Xã/Phường/Thị Trấn" name="tinh"></div>
+                  <div class="col"><select class="form-select form-select-sm mb-3" id="city" aria-label=".form-select-sm">
+                    <option value="" selected>Chọn tỉnh thành</option>           
+                    </select></div>
+                  <div class="col"><select class="form-select form-select-sm mb-3" id="district" aria-label=".form-select-sm">
+                    <option value="" selected>Chọn quận huyện</option>
+                    </select></div>
+                  <div class="col"><select class="form-select form-select-sm" id="ward" aria-label=".form-select-sm">
+<option value="" selected>Chọn phường xã</option>
+</select></div>
               </div>
               <div class="row dong-3">
                   <div class="col">
@@ -576,8 +582,10 @@
         </div>     
       </div>
       <script src="./access/js/myaccount.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     </div>
     <div class="footer"></div>
     <script src="./access/js/base.js"></script>
+
   </body>
 </html>
