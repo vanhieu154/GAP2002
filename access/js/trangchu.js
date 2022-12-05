@@ -73,7 +73,6 @@ function LoadJson(){
                     html+="</button>";
                     html+="</div>";
                     document.getElementById(place).innerHTML=html;
-
                 }
             }
             showProduct(data,data.length-6,data.length,"new_product");   

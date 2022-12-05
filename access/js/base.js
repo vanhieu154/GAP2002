@@ -260,3 +260,26 @@ function dangxuat(){
     } 
   }
 }
+function toProductPage(a) {
+  ma="";
+  switch (a){
+      case 0: 
+          ma ='Quần'
+          break;
+      case 1: 
+          ma ='Áo'
+          break;
+      case 2: 
+          ma ='Phụ kiện'
+          break;
+      case 3: 
+          ma ='Váy'
+          break;
+      }
+  sessionStorage.setItem('category',ma);
+  window.location='./trangsp.html';
+}
+function pSearch(){
+  let pS=document.getElementById('search-bar__input').value;
+  sessionStorage.setItem('pSearch',pS);
+}

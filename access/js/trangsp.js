@@ -63,7 +63,7 @@ function LoadJson(){
             for(let i=0; i<typeCategorys.length;i++){
                 typeCategorys[i].onclick=function(){
                     let product=[];
-                    j=0;
+                    let j=0;
                     var ma="";
                         switch (i){
                             case 0: 
@@ -139,36 +139,34 @@ function LoadJson(){
                 console.log(data);
                 showProduct(data,0,data.length,"total_product");
             }
-            function searchProduct(){
-                var arr=data;
-                let product =[];
-                var j=0;
-                function getUrlParams() {
-                    const params = new URLSearchParams (window.location.search);
-                    return params;
-                }
-                let cate=getUrlParams().get("header__category")
-                let searchProduct=getUrlParams().get("search-bar__input");
-                for (i = 0; i < arr.length; i++){
-                    if(cate != ""){
-                        if(cate==arr[i].LoaiSP){
-                            product[j] = arr[i];
-                            j++;
-                        }
+            if(sessionStorage.getItem('category') != null){
+                let cate=sessionStorage.getItem('category');
+                let product=[];
+                let j=0;
+                for(let p of data){
+                    if(p.LoaiSP==cate){
+                        product[j]=p;
+                        j++;
                     }
-                    if(searchProduct != ""){
-                    if ((arr[i].TenSP).toLowerCase().search(searchProduct.toLowerCase()) != -1) {
+                }
+                sessionStorage.removeItem('category');
+                showProduct(product,0,product.length,"total_product");  
+            }
+            if(sessionStorage.getItem('pSearch') != null){
+                let pS = sessionStorage.getItem('pSearch');
+                var arr=data;
+                console.log(pS);
+                let product=[];
+                let j=0;
+                for (i = 0; i < arr.length; i++){
+                    if ((arr[i].TenSP).toLowerCase().search(pS.toLowerCase()) != -1) {
                         product[j] = arr[i];
                         j++;
-                    }}
+                    }
                 }
+                sessionStorage.removeItem('pSearch');
                 showProduct(product,0,product.length,"total_product")
-                getUrlParams().delete();
-                cate="";
-                searchProduct="";
             }
-            searchProduct() 
-
         }
     )
     .catch(function(err){

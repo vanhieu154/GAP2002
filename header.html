@@ -15,10 +15,10 @@
                         <li class="">
                             <button class="header__list__sub-nav-link js-header__list__sub-nav-link" onclick="showSubnav()" >Sản Phẩm <i class="fa-solid fa-chevron-down"></i></button>
                             <ul id="showSubnav" class="sub-nav-menu js-sub-nav-menu">
-                                <li><a class="sub-nav-item" href="./trangsp.html">Áo</a></li>
-                                <li><a class="sub-nav-item" href="./trangsp.html">Đầm</a></li>
-                                <li><a class="sub-nav-item" href="./trangsp.html">Quần</a></li>
-                                <li><a class="sub-nav-item" href="./trangsp.html">Phụ kiện</a></li>
+                                <li><a class="sub-nav-item" href="./trangsp.html" onclick="toProductPage(0)">Quần</a></li>
+                                <li><a class="sub-nav-item" href="./trangsp.html" onclick="toProductPage(1)">Áo</a></li>
+                                <li><a class="sub-nav-item" href="./trangsp.html" onclick="toProductPage(2)">Phụ kiện</a></li>
+                                <li><a class="sub-nav-item" href="./trangsp.html" onclick="toProductPage(3)">Đầm</a></li>
                             </ul>      
                         </li>
                         <li><a href="">Blog</a></li>
@@ -40,16 +40,14 @@
                             <div class="">
                                 <a href="./trangsp.html">Sản Phẩm <i class="fa-solid fa-chevron-down"></i></a>
                                 <ul class="header__subnavbar">
-                                    <form action="./trangsp.html" method="get" class="" id="cate__Product">
-                                        <li><button type="submit" class="w-100 header__subnavbar-item" name="header__category" value="Áo" >Áo</button></li>
-                                        <li><button type="submit" class="w-100 header__subnavbar-item" name="header__category" value="Váy">Váy</button></li>
-                                        <li><button type="submit" class="w-100 header__subnavbar-item" name="header__category" value="Quần">Quần</button></li>
-                                        <li><button type="submit" class="w-100 header__subnavbar-item" name="header__category" value="Phụ kiện">Phụ kiện</button></li>
-                                    </form>
+                                    <li><a class="header__subnavbar-item" href="./trangsp.html" onclick="toProductPage(0)">Quần</a></li>
+                                    <li><a class="header__subnavbar-item" href="./trangsp.html" onclick="toProductPage(1)">Áo</a></li>
+                                    <li><a class="header__subnavbar-item" href="./trangsp.html" onclick="toProductPage(2)">Phụ kiện</a></li>
+                                    <li><a class="header__subnavbar-item" href="./trangsp.html" onclick="toProductPage(3)">Đầm</a></li>
                                 </ul>   
                             </div>  
                         </li>
-                        <li><a href="">Blog</a></li>
+                        <li><a href="./Blog.html">Blog</a></li>
                         <li><a href="./khuyenmai.html">Khuyến mãi</a></li>
                         <li><a href="./gioithieu.html">Giới thiệu</a></li>
                         <li><a href="./lienhe.html">Liên hệ</a></li>
@@ -67,7 +65,7 @@
                                 <HR></HR>
                                 <div class="header__search__search-bar">
                                     <input type="text" class="search-bar__input" placeholder="Tìm kiếm sản phẩm" id="search-bar__input" name="search-bar__input">
-                                    <button class="search-bar__btn" id="search-bar__btn" type="submit">
+                                    <button class="search-bar__btn" id="search-bar__btn" type="submit" onclick="pSearch()">
                                         <i class="search-bar__icon  fa-solid fa-magnifying-glass"></i>
                                     </button>
                                 </div>
@@ -244,8 +242,8 @@ ul{
 
 .header__subnavbar-item{
     /* text-align: center; */
-    border: none;
-    background-color: #fff;
+    padding: 10px !important;
+
 }
 
 .header__subnavbar li::after{
