@@ -8,23 +8,14 @@
     <title>Thanh toán </title>
     <link rel="stylesheet" href="./access/css/base.css">
     <link rel="stylesheet" href="./access/css/thanhtoan.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
     <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   </head>
   <body > 
 
-    <nav class="navbar"></nav>
-    <div class="body" >
-      <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="#">Giỏ hàng </a></li>
-          <li class="breadcrumb-item"><a href="#">Thông tin giao hàng </a></li>
-          <li class="breadcrumb-item active" aria-current="page">Phương thức thanh toán </li>
-        </ol>
-      </nav>
-    </nav>
-    
+   
       <div class="row w-100">
         <div  class="col-6 col--left success-order">
             <h5 class=""> GAP2002 </h5>
@@ -54,7 +45,7 @@
             </div>
           </div>
          
-            <div class=" lienhe"> 
+            <div class="lienhe"> 
                 
                 <iconify-icon icon="majesticons:question-circle" style="color: #6b4932;" width="30px"> </iconify-icon> 
                <span>Cần hỗ trợ?<a href="./lienhe.html"> Liên hệ chúng tôi </a>  </span>
@@ -64,14 +55,27 @@
         </div>
         <div class="col-6 col--left delivery-info" >
             <h5 class=""> GAP2002 </h5>
-            <div class="container text-center">
-      
+            <div class="row text-center">
                 <h4> Thông tin giao hàng</h4>
+                <h4><nav class=""></nav>
+                  <div class="" >
+                    <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+                      <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Giỏ hàng </a></li>
+                        
+                        <li class="breadcrumb-item active" aria-current="page">  Thông tin giao hàng  </li> 
+                        <li class="breadcrumb-item active" aria-current="page">  Phương thức thanh toán </li> 
+
+                        
+                        
+                      </ol>
+                    </nav>
+                  </nav></h4>
       <form action="#" method="get">
-            <div class="col">
-              <div class="mb-3">
+            <div class="col ">
+              <div class=" mb-3">
                   <label for="exampleFormControlTextarea1" class="form-label"> </label>
-                  <textarea class="form-control" id="hoten" name="hoten" rows="1" placeholder="Họ và tên"></textarea>
+                  <textarea class="form-control form-select-lg" id="hoten" name="hoten" rows="1" placeholder="Họ và tên"></textarea>
                 </div>
             </div>
             <div class="col">
@@ -79,13 +83,13 @@
                   <div class="col-8">
                     <div class="mb-3">
                       <label for="exampleFormControlInput1" class="form-label"> </label>
-                      <input type="email" class="form-control" id="email" name="email" placeholder="Email"> 
+                      <input type="email" class="form-control form-select-lg" id="email" name="email" placeholder="Email"> 
                     </div>
                   </div>
                   <div class="col-4">
                     <div class="mb-3">
                       <label for="exampleFormControlInput1" class="form-label"></label>
-                      <input type="tel" class="form-control" name="sdt" id="sdt" placeholder="Số điện thoại" > 
+                      <input type="tel" class="form-control form-select-lg" name="sdt" id="sdt" placeholder="Số điện thoại" > 
                     </div>
                   </div>
                 </div>
@@ -93,7 +97,7 @@
             <div class="col">
               <div class="mb-3">
                   <label for="exampleFormControlTextarea1" class="form-label"> </label>
-                  <textarea class="form-control" id="hoten" name="hoten" rows="1" placeholder="Địa chỉ"></textarea>
+                  <textarea class="form-control form-select-lg" id="hoten" name="hoten" rows="1" placeholder="Địa chỉ"></textarea>
                 </div>
             </div>
             <div class="col">
@@ -102,7 +106,7 @@
                     <div class="mb-3">
                       <label for="exampleFormControlInput1" class="form-label"> </label>
                       <div>
-                        <select class="form-select form-select-md mb-3" id="city" aria-label=".form-select-sm">
+                        <select class="form-select form-select-lg mb-3" id="city" aria-label=".form-select-sm">
                         <option value="" selected>Tỉnh/ thành</option>           
                         </select>
                          </div>    
@@ -112,7 +116,7 @@
                   <div class="col-6">
                     <div class="mb-3">
                       <label for="exampleFormControlInput1" class="form-label"></label>
-                      <select class="form-select form-select-md mb-3" id="district" aria-label=".form-select-sm">
+                      <select class="form-select form-select-lg mb-3" id="district" aria-label=".form-select-sm">
                         <option value="" selected>Quận/ huyện</option>
                         </select>
                     </div>
@@ -132,6 +136,16 @@
             <h5 class=""> GAP2002 </h5>
             <div class="container ">
                 <h4 class="text-center"> Thông tin giao hàng</h4>
+                <h4><nav class=""></nav>
+                  <div class="" >
+                    <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+                      <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Giỏ hàng </a></li>
+                        <li class="breadcrumb-item"><a href="#">Thông tin giao hàng </a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Phương thức thanh toán </li>
+                      </ol>
+                    </nav>
+                  </nav></h4>
         <form action="#" method="get">
           <form action="#" method="get">
           <div class="box__border"> 
@@ -200,7 +214,7 @@
             <div class="container ">
                 <div class="col row">
                   <div class="col-3 text-left">
-                     <img src="./access/Img/sanpham/gap05/gap05_2.webp"class="w-100"  alt=""> 
+                     <img src="./access/Img/thanh toan/thanh toan 1.png"class="w-100"  alt=""> 
                      <iconify-icon icon="material-symbols:lens" class="icon--soluong" style="color: #6b4932;" width="30px"></iconify-icon> 
                      <span class="number--soluong">1</span> 
                 </div>
@@ -210,14 +224,27 @@
                 <br>
                 <div class="col row">
                     <div class="col-3 text-left">
-                       <img src="./access/Img/sanpham/gap06/gap06_1.webp"class="w-100"  alt=""> 
+                       <img src="./access/Img/thanh toan/thanh toan 2.png"class="w-100"  alt=""> 
                        <iconify-icon icon="material-symbols:lens" class="icon--soluong" style="color: #6b4932;" width="30px"></iconify-icon> 
                        <span class="number--soluong">1</span> 
                   </div>
                     <div class="col-5 font--sp text-left">Áo sơ mi nữ túi nút phía trước </div>
                     <div class="col-4 color--gia">145,000<span style="text-decoration: underline;">đ  </span></div>
-                  </div>
+                  </div> <hr>
+                  <div class=" row container " >
+                    <div class="sudungmagiamgia col-10"> 
+                     
+                      <textarea class="form-control form-select-lg" id="magiamgia" name="magiamgia" rows="1" placeholder="Mã giảm giá" style="padding: 10px;"></textarea>
+                      <DIV class="col" style="padding-right: 20px;">   </DIV>
+                      <div class="col-1 " > 
+                     <input class="btn-primary button--gui" style="border-radius: 5px;" type="submit" value=" Sử dụng">
+                   </div> 
+                  
 
+        
+                    </div>
+                  
+                  </div>
                   <hr> 
                 <div class="col row text-left" >
                     <div class="col-8">Tạm tính</div>
@@ -226,12 +253,12 @@
           
                 <div class="col row">
                   <div class="col-8">Phí vận chuyển</div>
-                  <div class="col-4 text-right">20,000 <span style="text-decoration: underline;">đ  </span> </div>
+                  <div class="col-4 text-right">40,000<span style="text-decoration: underline;">đ  </span> </div>
                 </div>
                 <hr>
                 <div class="col row">
                     <div class="col-8 text-left">Tổng cộng</div>
-                    <h3 class="col-4 text-right color--gia">285,000<span style="text-decoration: underline;">đ  </span></h3>
+                    <h2 class="col-4 text-right color--gia" style="font-weight: bolder;">285,000<span style="text-decoration: underline;">đ  </span></h2>
                   </div>
 
               </div>
@@ -240,5 +267,38 @@
    
     
       <script src="./access/js/thanhtoan.js"></script>
+      
+    <script>
+      var citis = document.getElementById("city");
+    var districts = document.getElementById("district");
+    
+    var Parameter = {
+      url: "https://raw.githubusercontent.com/kenzouno1/DiaGioiHanhChinhVN/master/data.json", 
+      method: "GET", 
+      responseType: "application/json", 
+    };
+    var promise = axios(Parameter);
+    promise.then(function (result) {
+      renderCity(result.data);
+    });
+    
+    function renderCity(data) {
+      for (const x of data) {
+        citis.options[citis.options.length] = new Option(x.Name, x.Id);
+      }
+      citis.onchange = function () {
+        district.length = 1;
+        // ward.length = 1;
+        if(this.value != ""){
+          const result = data.filter(n => n.Id === this.value);
+    
+          for (const k of result[0].Districts) {
+            district.options[district.options.length] = new Option(k.Name, k.Id);
+          }
+        }
+      };
+      
+    }
+      </script>
   </body>
 </html>

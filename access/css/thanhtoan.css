@@ -16,6 +16,7 @@ input{
     flex: 0 0 auto;
     width: 50%;
     padding-top: 50px;
+    padding-bottom: 35px;
     background-color: var(--lightgrey);
 }
 
@@ -30,12 +31,15 @@ input{
     --red: #FF0000;
 }
 h5{
-    color: var(--darkbrown);
     font-size: 3rem;
+    text-align: left;
+    color: var(--darkbrown);
+    font-weight: bolder;
 }
 h4{
-    color: var(--darkbrown);
     font-size: 2rem;
+    font-weight: 700;
+    text-align: left;
 }
 a{
     color: var(--black);
@@ -103,6 +107,13 @@ padding-right: 20px;
     align-items: center;
     padding-top: 30px;
 }
+.sudungmagiamgia{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+   
+}
+
 .button--muahang{
     background-color: initial;
     font-weight: bold;
@@ -156,7 +167,6 @@ margin-top: -10px;
 }
 .delivery-info{
     /* display: none; */
-    font-size: 1.6rem;
 }
 .delivery-info2{
     display: none;
