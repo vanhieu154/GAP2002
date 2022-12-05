@@ -104,6 +104,7 @@ if(btnDonHang){
         document.querySelector(".body__container--hosocuatoi").style.display="none"
         document.querySelector(".body__container--Order").style.display="block"
         document.querySelector(".body__container--thongbao").style.display="none"
+        document.querySelector(".body__container--OrderDetail").style.display="none"
     })
 }
 const btnhsct=document.querySelector(".btn__myaccount");
@@ -112,6 +113,7 @@ if(btnhsct){
         document.querySelector(".body__container--hosocuatoi").style.display="block"
         document.querySelector(".body__container--Order").style.display="none"
         document.querySelector(".body__container--thongbao").style.display="none"
+        document.querySelector(".body__container--OrderDetail").style.display="none"
     })
 }
 const btnthongbao=document.querySelector(".btn__thongbao");
@@ -120,6 +122,7 @@ if(btnthongbao){
         document.querySelector(".body__container--hosocuatoi").style.display="none"
         document.querySelector(".body__container--Order").style.display="none"
         document.querySelector(".body__container--thongbao").style.display="block"
+        document.querySelector(".body__container--OrderDetail").style.display="none"
     })
 }
 const view=document.querySelector(".btn-viewdetail");
