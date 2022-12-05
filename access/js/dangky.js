@@ -3,17 +3,59 @@ function user( phone, nameDK, pass){
     this.nameDK =nameDK;
     this.pass = pass;
 }
+function dangKi(){
+  var KT_SDT = document.getElementById("txt_phone").value
+  if(document.getElementById("txt_name_dk").value==""){
+    alert("bạn chưa nhập tên đăng nhập");
+    document.getElementById("txt_name_dk").focus();
+  }
+  else if(document.getElementById("txt_name_dk").value.length < 5) 
+  {
+    alert("tên đăng nhập không hợp lê. Mời nhập lại");
+    document.getElementById("txt_name_dk").focus();
+  }
+  else if(document.getElementById("passDK").value==""){
+    alert("bạn chưa nhập mật khẩu");
+    document.getElementById("passDK").focus();
+  }
+  else if(document.getElementById("passDK").value.length < 3) 
+  {
+    alert("mật khẩu phải có độ dài hơn 3 kí tự. Mời nhập lại");
+    document.getElementById("passDK").focus();
+  }
+  else if(document.getElementById("passDK2").value==""){
+    alert("bạn chưa nhập lại mật khẩu");
+    document.getElementById("passDK").focus();
+  }
+  else if(document.getElementById("passDK2").value != document.getElementById("passDK").value) 
+  {
+    alert("mật khẩu nhập lại chưa trùng khớp");
+    document.getElementById("passDK2").focus();
+  }
+  else if(document.getElementById("txt_phone").value=="" ){
+    alert("Bạn chưa nhập số điện thoại");
+    document.getElementById("txt_phone").focus();
+  }
+  else if(KT_SDT[0] != 0 || KT_SDT.length != 10){
+    alert(" số điện thoại không hợp lệ mời kiểm tra lại");
+    document.getElementById("txt_phone").focus();
+    document.getElementById("txt_phone").select();
+  }
+  else{
+  check();
+ }
+
+}
 function check(){
     var temp= localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')):[];
     var kt =document.getElementById('txt_name_dk').value;  
     var kt_sdt =document.getElementById("txt_phone").value;
     if( localStorage.getItem('user') == null){
-        alert("Đăng ký thành công")
         var tmp= new user(document.getElementById("txt_phone").value, document.getElementById("txt_name_dk").value,document.getElementById("passDK").value);
         temp.push(tmp);
         localStorage.setItem('user',JSON.stringify(temp));
         console.log(localStorage.getItem('user',JSON.stringify(temp)));
-        // window.location ="./trangchu.html";
+        window.location ="./otp-dangky.html";
         return;
     }
     for(i =0; i<temp.length;i++){
@@ -31,10 +73,9 @@ function check(){
            break;
         }
         else if(i === temp.length-1){
-          alert("Đăng ký thành công")
           var tmp= new user(document.getElementById("txt_phone").value, document.getElementById("txt_name_dk").value,document.getElementById("passDK").value);
           temp.push(tmp);
-        //   window.location ="./trangchu.html";
+          window.location ="./otp-dangky.html";
           break;
         }       
     }
