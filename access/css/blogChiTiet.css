@@ -76,11 +76,14 @@ a{
 .img{
     float: left;
     width: 25%;
+    margin-bottom:px;
 }
 .title__blog{
     color: var(--lightpink);
 }
-
+.logo{
+    margin-bottom: 20px;
+}
 .col__right{
     padding-left: 30px;
     padding-right: 60px;
