@@ -114,11 +114,11 @@ function showLogin() {
   if(sessionStorage.getItem('checkLogin') == 1){
     html+='<div class="header__login2">';
     html+='<ul>';
-    html+='<li><a class="header__login-item" href="#"> Tài khoản của tôi</a></li>';
-    html+='<li><a class="header__login-item" href="#"> Đơn hàng</a></li>';
-    html+='<li><a class="header__login-item" href="#"> Thông báo</a></li>';
-    html+='<li><a class="header__login-item" href="#"> Kho voucher</a></li>';
-    html+='<li><a class="header__login-item" href="#"> Đăng xuất</a></li>';
+    html+='<li><a class="header__login-item" href="./myaccount.html"> Tài khoản của tôi</a></li>';
+    html+='<li><a class="header__login-item" href="./myaccount.html"> Đơn hàng</a></li>';
+    html+='<li><a class="header__login-item" href="./myaccount.html"> Thông báo</a></li>';
+    html+='<li><a class="header__login-item" href="./myaccount.html"> Kho voucher</a></li>';
+    html+='<li><a class="header__login-item" onclick="dangxuat()" href="#"> Đăng xuất</a></li>';
     html+='</ul>';
     html+='</div>';
   }else{
@@ -233,4 +233,15 @@ function CheckLogin(){
    document.getElementById("password").value ="";
   }
 }
-
+function dangxuat(){
+  sessionStorage.removeItem('checkLogin');
+  sessionStorage.removeItem('loginAccount');
+  alert("Đăng xuất thành công");
+  let dropdowns1 = document.getElementsByClassName('header__login-container');
+  for (let i = 0; i < dropdowns1.length; i++) {
+    var openDropdown1 = dropdowns1[i];
+    if (openDropdown1.classList.contains("activate")) {
+        openDropdown1.classList.remove("activate");  
+    } 
+  }
+}

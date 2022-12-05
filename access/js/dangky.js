@@ -44,7 +44,6 @@ function dangky(){
   else{
   check();
  }
-
 }
 function check(){
     var temp= localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')):[];

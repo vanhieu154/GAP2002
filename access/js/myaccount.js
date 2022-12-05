@@ -4,7 +4,6 @@ if(butTon){
         document.querySelector(".btn-content").classList.toggle(("activeB"))
     })
 }
-    
 const hoso=document.querySelector(".hoso");
 const diachi=document.querySelector(".diachi");
 const matkhau=document.querySelector(".doi-mat-khau");
