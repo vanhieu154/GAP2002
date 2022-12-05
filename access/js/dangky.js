@@ -3,7 +3,7 @@ function user( phone, nameDK, pass){
     this.nameDK =nameDK;
     this.pass = pass;
 }
-function dangKi(){
+function dangky(){
   var KT_SDT = document.getElementById("txt_phone").value
   if(document.getElementById("txt_name_dk").value==""){
     alert("bạn chưa nhập tên đăng nhập");
