@@ -234,19 +234,23 @@ margin-bottom: 10px;
 }
 .dong-2{
     margin-bottom: 30px;
+    
 }
 .dong-3{
     margin-bottom: 30px;
 }
+.form-select-sm{
+    font-size: 1.4rem;
+}
 .return{
-    margin-top: 10px;
     text-align: right;
     cursor: pointer;
 }
 .complete{
     background-color: #6B4932;
     color: white;
-    width: 40%;
+    width: 50%;
+    text-align: center;
 }
 .dong-5{
     margin-top: 20px;
