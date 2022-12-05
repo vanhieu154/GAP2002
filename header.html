@@ -59,7 +59,7 @@
                 <div class="header__icon-wrap">
                     <div class="header__icon__search dropdown-center">
                         <button class=" box-icon" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <span class="  fa-solid fa-magnifying-glass"></span>
+                            <span style="font-size: 2.5rem" class="  fa-solid fa-magnifying-glass"></span>
                         </button >
                         <div class="dropdown-menu header__search ">
                             <form action="./trangsp.html" method="get" class="" id="searchProduct">
@@ -74,18 +74,16 @@
                             </form>
                         </div>
                     </div>
-                    <div class="header__icon__login dropdown-center">
-                        <button class="box-icon"
-                        type="button" data-bs-toggle="dropdown" aria-expanded="false"
-                        >
-                            <span class="fa-solid fa-circle-user"></span>
+                    <div class="header__icon__login ">
+                        <button class="box-icon" type="button" onclick="showLogin()">
+                            <span style="font-size: 2.5rem" class="fa-solid fa-circle-user"></span>
                         </button>
                             <div class="header__login dropdown-menu">
                                 <!-- <form > -->
                                     <h2>ĐĂNG NHẬP TÀI KHOẢN</h2>
                                     <p>Nhập tài khoản và mật khẩu của bạn</p>
                                     <div class="header__login__nor">
-                                        <input type="text" placeholder="Tài khoản" id="user" malgength="128">
+                                        <input type="text" placeholder="Tên tài khoản" id="user" malgength="128">
                                     </div>
                                     <div class="header__login__nor">
                                         <input type="password"  placeholder="Mật khẩu" id="password">
@@ -122,10 +120,11 @@
                                     </div>
                                 <!-- </form> -->
                             </div>
+                        <div id="header__login-container"></div>
                     </div>
                     <div class="header__icon__cart" id="header__icon__cart" >
                         <button class="box-icon" onclick="showCart()" >
-                            <span class="fa-solid fa-cart-shopping"></span>
+                            <span style="font-size: 2.5rem" class="fa-solid fa-cart-shopping"></span>
                         </button>
                     </div>
                     <div class="header__cart" id="header__cart">
@@ -432,13 +431,19 @@ ul{
     background-color: var(--white-color);
 }
 /* header login */
+#header__login-container{
+    display: none;
+}
+#header__login-container.activate{
+    display: block;
+}
 .header__icon__login{
     display: flex;
     flex-direction: column;
 }
 
 .header__login{
-    height: 435px;
+    /* height: 435px; */
     width: 400px;
     position: absolute;
     background-color:var(--white-color);
@@ -447,9 +452,8 @@ ul{
     padding: 25px;
     text-align: center;
     font-size: 1.5rem;
-}
-.dropdown-menu[data-bs-popper].header__login{
-    left: -298px;
+    left: -258px;
+    z-index: 1;
 }
 .header__login h2{
     /* color: var(--main-color);
@@ -696,7 +700,44 @@ ul{
 .header__cart-item__quantity span:hover{
     background-color: #c6c6c6;
 }
- 
+.header__login2{
+    width: 200px;
+    position: absolute;
+    background-color:var(--white-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 1.5rem;
+    top: 50px;
+    left: -62px;
+}
+.header__login2 ul{
+    padding: 0;
+}
+.header__login2 li{
+    border-radius: 20px;
+    background-color: var(--background-color);
+    margin: 7px ;
+    padding: 5px 10px;
+}
+.header__login2 li a{
+    color: #fff;
+}
+.header__login2 li:hover {
+    background-color: var(--btn-color);
+    color: #fff;
+    border-radius: 20px;
+}
+.header__login2::before{
+    content: "";
+    border-width: 10px 10px;
+    border-style:  solid;   
+    border-color: transparent transparent var(--white-color) transparent;
+    position: absolute;
+    right: 65px;
+    top: -18px;
+    /* box-shadow: inset 0 2px 0 rgb(0 0 0 / 2%); */
+}
 /*---------------- RESPONSIVE ------------------------*/
 @media (max-width: 1023px){
     .header__list{
