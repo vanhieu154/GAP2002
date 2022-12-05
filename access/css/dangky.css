@@ -146,7 +146,7 @@ input[type='radio']{
 /* Login Card Form Elements */
 .login-card input[type="text"],
 .login-card input[type="password"],
-.login-card input[type="phone"] {
+.login-card input[type="number"] {
     border: none;
     outline: none;
     background: rgba(255, 255, 255, .3);

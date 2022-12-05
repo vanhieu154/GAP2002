@@ -1,6 +1,8 @@
 * {
     margin: 0;
     padding: 0;
+    font-size: 1.6rem;
+    font-family: Quicksand;
 }
 :root {
     --darkpink: #b8a898;
@@ -13,52 +15,61 @@
   body{
     text-align: justify;
   }
-  .header{
+  
+  .breadcrumb{
     background-color: var(--lightpink);
     padding: 5px ;
-    margin-top: 102px;
-    font-size: 12px;
-  }
-  .header__text{
     padding-left: 70px;
-  }
-.fontweight__bolder{
+    margin-top: 92px;
+}
+.breadcrumb>li a{
+    font-size: 1.2rem;
+}
+.breadcrumb>li{
+    font-size: 1.2rem;
+}
+a{
+    color: var(--black);
+    text-decoration: none;
+}
+.content-bold{
     font-weight: bold;
 }
-.title__left{
+.col__left--title{
     position: relative; 
 }
-.title__left::after{
+.col__left--title::after{
     content: "";
     border: 1px solid;
     display: block;
     margin-top: 5px;
     min-width: 50px;
 }
-.title__right{
-    font-size: 24px;
+.col__right--title{
+    font-size: 2.5rem;
     font-weight: bolder;
     color: var(--darkbrown);
     margin-top: 20px;
 }
-a{
-    color: var(--black);
-    text-decoration: none;
-}
 .col__left{
-    padding: 0px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 70px;
+}
+.col__left > h3{
+    text-align: center;
 }
 .col__right{
     padding-left: 10px;
     padding-right: 50px;
 }
-h5{
+.col__left >h5{
     text-align: center;
 }
-.col__left__list{
+.col__left--list{
     margin-top: 30px;
 }
-.title__chinhsachCOD{
+.col__right > h1{
     text-align: center;
     font-weight: bolder;
     color: var(--darkbrown);

@@ -15,9 +15,8 @@
             <div class="input-otp-header">
                 Vui lòng nhập mã OTP để xác minh </div>
                 <div class="text">Mã xác minh của bạn sẽ được gửi bằng tin nhắn đến <br>
-                    (+84) 000000000</div>
-            
-        <form action="./dangkythanhcong.html" method="get"  data-autosubmit="false" autocomplete="off">
+                <span id="phoneNumber">000000000</span></div>   
+        <!-- <form action="./dangkythanhcong.html" method="get"  data-autosubmit="false" autocomplete="off"> -->
             <div class="mb-6 text-center">
                 <div id="otp" class="flex justify-center">
                 <input class="m-2 text-center form-control form-control-solid rounded focus:border-blue-400 focus:shadow-outline" type="number" id="first" maxlength="1" autofocus required/>
@@ -26,17 +25,32 @@
                 <input class="m-2 text-center form-control form-control-solid rounded focus:border-blue-400 focus:shadow-outline" type="number" id="fourth" maxlength="1" required/>
                 <input class="m-2 text-center form-control form-control-solid rounded focus:border-blue-400 focus:shadow-outline" type="number" id="fifth" maxlength="1" required/>
                 <input class="m-2 text-center form-control form-control-solid rounded focus:border-blue-400 focus:shadow-outline" type="number" id="sixth" maxlength="1" required/>
-                
                 </div>
             </div>
             <div >Bạn vẫn chưa nhận được?
                 <a href="#">Gửi lại</a>
             </div>
             <div class="button">
-            <button type="submit">Xác nhận</button>
+            <!-- <button type="submit">Xác nhận</button> -->
+                <button onclick="Verify()">Xác nhận</button>
             </div>
-        </form>
+        <!-- </form> -->
     </div>
+    <script>
+        var temp= localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')):[]
+        document.getElementById('phoneNumber').innerHTML=temp[temp.length-1].phone
+        function Verify(){
+        const otp=document.querySelectorAll('.form-control').values
+        console.log(otp);
+            for (let i = 0; i < otp.length; i++) {
+                if(otp[i] != i){
+                    alert("Mã OTP bạn nhập sai vui lòng nhập lại");
+                    break;  
+                }
+            }
+            window.location="./dangkythanhcong.html "
+        }
+    </script>
 </body>
 <script src="./access/js/otp.js"></script>
 </html>
