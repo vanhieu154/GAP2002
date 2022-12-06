@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./access/fonts/fontawesome-free-6.2.0-web/css/all.min.css">
     <title>Thanh toán </title>
     <link rel="stylesheet" href="./access/css/base.css">
+    <!-- <link rel="stylesheet" href="./access/css/otp.css"> -->
     <link rel="stylesheet" href="./access/css/thanhtoan.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
@@ -146,8 +147,7 @@
                       </ol>
                     </nav>
                   </nav></h4>
-        <form action="#" method="get">
-          <form action="#" method="get" name="howToPay">
+        <form action="#" method="get" name="howToPay">
           <div class="box__border"> 
                 <div class="form-check" >
                   <input class="form-check-input" type="radio" name="deliveryPrice"  id="deliveryPrice1" value="20000" onclick="dP(20000)" >
@@ -179,20 +179,19 @@
                   </label>
                 </div> <hr>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="howToDelivery" onclick="showEwallet(0)">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="howToDelivery" onclick="showEwallet(1)"  data-bs-toggle="modal" data-bs-target="#showVisa">
                   <label class="form-check-label" for="flexRadioDefault2">
                     Chuyển khoản qua ngân hàng 
                   </label>
                 </div> <hr>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="howToDelivery" onclick="showEwallet(1)">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="howToDelivery" onclick="showEwallet(2)">
                   <label class="form-check-label" for="flexRadioDefault2">
                     Ví điện tử
                   </label>
                 </div> 
                 
               </div> 
-            </form>
             <div class="icon__qr" style="display: none"><iconify-icon icon="bi:qr-code-scan" width="150px"></iconify-icon></div>
             <br>
             <div class="w-100 button--gui__position "> 
@@ -234,6 +233,89 @@
               </div>
        
         </div>
+        <div class="modal fade" id="showVisa" tabindex="-1" aria-labelledby="showVisaLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="showVisaLabel">Thanh toán bằng thẻ ngân hàng</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body" >
+                <div class="modal-img">
+                  <img style="max-height: 100px" src="./access/Img/visa.png" alt="" >
+                </div>
+                <div class="mb-3">
+                  <label for="creditCardNumber" class="form-label">CREDIT CARD NUMBER</label>
+                  <input type="number" class="form-control" id="creditCardNumber" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="cardHolder" class="form-label">CARD HOLDER</label>
+                  <input type="text" class="form-control" id="cardHolder">
+                </div>
+                <div class="row">
+                  <div class="col-6">
+                    <div class="mb-3">
+                      <label for="creditCardNumber" class="form-label">CREDIT CARD NUMBER</label>
+                      <input type="number" class="form-control" id="creditCardNumber" aria-describedby="emailHelp">
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="mb-3">
+                      <label for="creditCardNumber" class="form-label">CREDIT CARD NUMBER</label>
+                      <input type="number" class="form-control" id="creditCardNumber" aria-describedby="emailHelp">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">PURCHASE</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Nhập mã otp:</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <h1>Vui lòng nhập mã otp để xác minh</h1>
+                <div class="mb-6 text-center">
+                  <div id="otp" class="row" style="justify-content: center;margin: 30px;">
+                    <input class=" text-center col-1" type="number" id="first" maxlength="1" autofocus required/>
+                    <input class=" text-center col-1" type="number" id="second" maxlength="1" pattern="[0-9]*" required/>
+                    <input class=" text-center col-1" type="number" id="third" maxlength="1" required/>
+                    <input class=" text-center col-1" type="number" id="fourth" maxlength="1" required/>
+                    <input class=" text-center col-1" type="number" id="fifth" maxlength="1" required/>
+                    <input class=" text-center col-1" type="number" id="sixth" maxlength="1" required/>
+                  </div>
+              </div>
+              <div >Bạn vẫn chưa nhận được?
+                  <a href="#">Gửi lại</a>
+              </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Xác nhận</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
       <div class="footer"></div>
       <script src="./access/js/thanhtoan.js"></script>
       <script src="./access/js/base.js"></script>

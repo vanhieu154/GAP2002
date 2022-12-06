@@ -13,6 +13,9 @@
     --grey: #ADA9A9;
     --red: rgb(233, 15, 15);
 }
+.form-control{
+    font-size: 1.6rem;
+}
 .breadcrumb{
     background-color: var(--lightpink);
     padding: 5px ;

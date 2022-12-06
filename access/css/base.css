@@ -48,4 +48,9 @@ a:hover{
   color: var(--btn-color);
   cursor: pointer;
 }
+.form-control:focus{
+  border-color: rgb(210 190 180);
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgb(210 190 180/55%);
+}
 

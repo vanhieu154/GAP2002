@@ -43,9 +43,47 @@ function dP(Number) {
     document.getElementById('totalPrice').innerHTML=pay+Number;
 }
 function showEwallet(Number){
+    var pay=0;
+    var p=JSON.parse(sessionStorage.getItem("Cart"));
+    for (let i = 0; i < p.length; i++) {
+        pay = pay+ p[i].total;
+    }
     if(Number == 0){
+        if (pay > 500000) {
+            alert("Không được chọn trả tiền trực tiếp khi giá trên 500K xin khách hàng chọn phương thức khác");
+        }
         document.querySelector(".icon__qr").style.display="none";
-    }else{
+    }else if(Number == 2){
         document.querySelector(".icon__qr").style.display="flex";
+    }else if(Number == 1){
+        document.querySelector(".icon__qr").style.display="none";
     }
 }
+function OTPInput() {
+    const inputs = document.querySelectorAll('#otp > *[id]');
+    for (let i = 0; i < inputs.length; i++) {
+      inputs[i].addEventListener('keydown', function(event) {
+        if (event.key === "Backspace") {
+          inputs[i].value = '';
+          if (i !== 0)
+            inputs[i - 1].focus();
+        } else {
+          if (i === inputs.length - 1 && inputs[i].value !== '') {
+            return true;
+          } else if (event.keyCode > 47 && event.keyCode < 58) //0-9 only
+          {
+            inputs[i].value = event.key;
+            if (i !== inputs.length - 1)
+              inputs[i + 1].focus();
+            event.preventDefault();
+          } else if (event.keyCode > 64 && event.keyCode < 91) {
+            inputs[i].value = String.fromCharCode(event.keyCode);
+            if (i !== inputs.length - 1)
+              inputs[i + 1].focus();
+            event.preventDefault();
+          }
+        }
+      });
+    }
+  }
+  OTPInput();
