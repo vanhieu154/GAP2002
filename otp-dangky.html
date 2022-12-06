@@ -40,15 +40,17 @@
         var temp= localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')):[]
         document.getElementById('phoneNumber').innerHTML=temp[temp.length-1].phone
         function Verify(){
-        const otp=document.querySelectorAll('.form-control').values
-        console.log(otp);
-            for (let i = 0; i < otp.length; i++) {
-                if(otp[i] != i){
-                    alert("Mã OTP bạn nhập sai vui lòng nhập lại");
-                    break;  
-                }
+        const otp1=document.getElementById('first').value;
+        const otp2=document.getElementById('second').value;
+        const otp3=document.getElementById('third').value;
+        const otp4=document.getElementById('fourth').value;
+        const otp5=document.getElementById('fifth').value;
+        const otp6=document.getElementById('sixth').value;
+            if(otp1==1 && otp2==2 && otp3==3 && otp4==4 && otp5==5 && otp6==6){
+                window.location="./dangkythanhcong.html"
+            }else{
+                alert("Nhập mã otp sai vui lòng nhập lại")
             }
-            window.location="./dangkythanhcong.html "
         }
     </script>
 </body>

@@ -180,3 +180,17 @@ function renderCity(data) {
     }
   };
 }
+function showTK(){
+    var acc=JSON.parse(sessionStorage.getItem('loginAccount'));
+    const gioitinh= document.querySelectorAll('input[name="gioitinh"]');
+    for (let i = 0; i < gioitinh.length; i++) {
+        if(gioitinh[i].value==acc[0].gender){
+            gioitinh[i].setAttribute("checked", "checked");
+        }
+    }
+    document.getElementById('accName').innerHTML=acc[0].nameDK;
+    document.getElementById('tendangnhap').innerHTML=acc[0].nameDK;
+    document.getElementById('phone').innerHTML=acc[0].phone;
+
+}
+showTK()

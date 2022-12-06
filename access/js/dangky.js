@@ -1,7 +1,8 @@
-function user( phone, nameDK, pass){
+function user( phone, nameDK, pass,gender){
     this.phone =phone;
     this.nameDK =nameDK;
     this.pass = pass;
+    this.gender=gender;
 }
 function dangky(){
   var KT_SDT = document.getElementById("txt_phone").value
@@ -50,7 +51,7 @@ function check(){
     var kt =document.getElementById('txt_name_dk').value;  
     var kt_sdt =document.getElementById("txt_phone").value;
     if( localStorage.getItem('user') == null){
-        var tmp= new user(document.getElementById("txt_phone").value, document.getElementById("txt_name_dk").value,document.getElementById("passDK").value);
+        var tmp= new user(document.getElementById("txt_phone").value, document.getElementById("txt_name_dk").value,document.getElementById("passDK").value,document.querySelector('input[name="gender"]:checked').value);
         temp.push(tmp);
         localStorage.setItem('user',JSON.stringify(temp));
         console.log(localStorage.getItem('user',JSON.stringify(temp)));

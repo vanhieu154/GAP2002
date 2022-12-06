@@ -207,10 +207,11 @@ function login(){
     CheckLogin();
   }
 }
-function user( phone, nameDK, pass){
+function user( phone, nameDK, pass,gender){
   this.phone =phone;
   this.nameDK =nameDK;
   this.pass = pass;
+  this.gender=gender;
 }
 function CheckLogin(){
   var tmp = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')):[];
@@ -223,12 +224,13 @@ function CheckLogin(){
   }
   var NameDN = document.getElementById("user").value;
   var pass = document.getElementById("password").value;
-  console.log(NameDN);
-  console.log(tmp.length);
+  // console.log(NameDN);
+  // console.log(tmp.length);
   for(i =0; i<tmp.length;i++){
    if(NameDN === tmp[i].nameDK && tmp[i].pass === pass)
    {
-    var tmp1 = new user(tmp[i].phone,tmp[i].nameDK,tmp[i].pass);
+    console.log(tmp[i].gender);
+    var tmp1 = new user(tmp[i].phone,tmp[i].nameDK,tmp[i].pass,tmp[i].gender);
     loginAccount.push(tmp1)
     sessionStorage.setItem('loginAccount',JSON.stringify(loginAccount));
     sessionStorage.setItem('checkLogin',1);
@@ -259,6 +261,7 @@ function dangxuat(){
         openDropdown1.classList.remove("activate");  
     } 
   }
+  window.location='./trangchu.html';
 }
 function toProductPage(a) {
   ma="";

@@ -28,7 +28,7 @@
           <div class="row myaccount-body-left-1 " >
             <div class="col icon-account"><iconify-icon icon="carbon:user-avatar-filled-alt" style="color: #b8a898" witdh="80px" height="80px"></iconify-icon></div>
             <div class="col icon-account-content">
-                <p>Tên tài khoản</p>
+                <p id="accName">Tên tài khoản</p>
                 <p><iconify-icon icon="material-symbols:edit" witdh="20px" height="20px"></iconify-icon> Sửa hồ sơ</p></div>
           </div>
           <div class="col myaccount-body-left-2">
@@ -99,7 +99,8 @@
                         <label for="tendangnhap">Tên đăng nhập:</label>
                     </div>  
                     <div class="col">
-                        <input type="text" class="form-control" id="tendangnhap" placeholder="Nhập tên đăng nhập" name="tendangnhap">
+                      <!-- <input type="text" class="form-control" id="tendangnhap" placeholder="Nhập tên đăng nhập" name="tendangnhap"> -->
+                        <p id="tendangnhap"></p>
                     </div>         
                 </div>
                 <div class="row hs">
@@ -123,7 +124,8 @@
                         <label for="phone">Số điện thoại:</label>
                     </div>  
                     <div class="col">
-                        <input type="text" class="form-control" id="phone" placeholder="Nhập số điện thoại" name="phone">
+                      <!-- <input type="text" class="form-control" id="phone" placeholder="Nhập số điện thoại" name="phone"> -->
+                      <p id="phone"></p>
                     </div>            
                 </div>
                 <div class="row hs">
@@ -132,8 +134,9 @@
                     </div>  
                     <div class="col">
                         <div class="row">
-                            <div class="col-4" style="text-align: left;"> <input type="radio" id="gioitinh" name="gioitinh" value="nam">Nam</div>
-                            <div class="col" style="text-align: left;"><input type="radio" id="gioitinh" name="gioitinh" value="nu" checked>Nữ</div>
+                            <div class="col" style="text-align: left;"> <input type="radio" id="gioitinh" name="gioitinh" value="nam">Nam</div>
+                            <div class="col" style="text-align: left;"><input type="radio" id="gioitinh" name="gioitinh" value="nu">Nữ</div>
+                            <div class="col" style="text-align: left;"><input type="radio" id="gioitinh" name="gioitinh" value="khac">Khác</div>
                         </div>
                     </div>            
                 </div>
@@ -577,9 +580,6 @@
           </button></div>
           <div class="col"></div>
           </div>
-        
-        
-        
       </div>
         </div>     
       </div>
