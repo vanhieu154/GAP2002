@@ -8,16 +8,24 @@
     --white: #ffffff;
     --green: rgb(82, 155, 115);
   }
-  .header{
+  .breadcrumb{
     background-color: var(--lightpink);
     padding: 5px ;
-    font-size: 1rem;}
+    font-size: 12px;
+    padding-left: 70px;
+  }
+  .breadcrumb>li{
+    font-size: 1.2rem;
+  }
 a{
     color: black;
     text-decoration: none;
 }
 p{
     font-size: 1.6rem;
+}
+.blog{
+    margin-top: 92px;
 }
 .hr__style{
     width: 90%;
@@ -43,4 +51,15 @@ p{
     color: #B8A898;
     font-size: large;
 }
-    
+@media (max-width: 1023px) and (min-width: 740px) {
+    .blog{
+        margin-top: 128px;
+    }
+}
+
+/*mobile*/
+@media (max-width: 740px) {
+    .blog{
+        margin-top: 128px;
+    }
+}

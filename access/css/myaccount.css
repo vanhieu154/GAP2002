@@ -6,7 +6,9 @@ body{
 *{
     font-size: 1.6rem;
 }
-
+.my-body__container{
+    min-height: 500px;
+}
 .breadcrumb-item a{
     font-size: 1.2rem;
 }
@@ -75,6 +77,17 @@ a{
     background-color: var(--lightpink);
     text-align: left;
     font-size: 1.6rem;
+    border: none;
+}
+.btn:hover{
+    background-color: #fff;
+    color: #333;
+}
+.modal-footer{
+    justify-content: flex-start ;
+}
+.modal-footer>.btn{
+    width: auto;
 }
 .content-detail{
     cursor: pointer;
@@ -189,44 +202,7 @@ margin-bottom: 10px;
     margin-top: 30px;
 }
 .modal{
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    animation: linear 0.1s;
-    display: none;
-    
-}
-.modal.open{
-    display: flex;
-}
-/*Lớp phủ đen đen */
-.modal__overlay{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.4);
-}
-.modal__body{
-    width: 40%;
-    height: auto;
-    background-color: white;
-    margin: auto;
-    position: relative;
-    z-index: 1;
-    border-radius: 5px;
-    animation: growth linear 0.1s;
-    --growth-from:0.7s;
-    --growth-to:1;
-    margin: auto;
-    padding: auto;
-    /* display: none; */
-
-}
-.modal__inner{
-    margin: 20px;
-    
+    --bs-modal-width:700px; 
 }
 .dong-1{
     margin-top:30px;
@@ -427,7 +403,24 @@ margin-bottom: 10px;
 .return--orderdetail{
     cursor: pointer;
 }
+.form-check-input:focus{
+    box-shadow: 0 0 0 0.25rem rgb(210 190 180)
+}
+.form-check-input:checked{
+    background-color: rgb(210 190 180);
+    border-color: rgb(210 190 180);
+}
+
 /* Reponsive */
-@media screen {
-    
+@media (max-width: 1023px) and (min-width: 740px) {
+    .breadcrumb{
+        margin-top: 128px;
+    }
+}
+
+/*mobile*/
+@media (max-width: 740px) {
+    .breadcrumb{
+        margin-top: 128px;
+    }
 }

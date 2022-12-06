@@ -46,5 +46,6 @@ input[type=number] {
 
 a:hover{
   color: var(--btn-color);
+  cursor: pointer;
 }
 

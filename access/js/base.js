@@ -283,3 +283,8 @@ function pSearch(){
   let pS=document.getElementById('search-bar__input').value;
   sessionStorage.setItem('pSearch',pS); 
 }
+function pSearch1(){
+  let pS=document.getElementById('search-bar__input1').value;
+  sessionStorage.setItem('pSearch',pS); 
+  window.location='./trangsp.html';
+}

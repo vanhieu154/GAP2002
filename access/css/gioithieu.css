@@ -79,4 +79,15 @@ a{
     font-weight: bold;
     font-size: large;
 }
+@media (max-width: 1023px) and (min-width: 740px) {
+    .breadcrumb{
+        margin-top: 128px;
+    }
+}
 
+/*mobile*/
+@media (max-width: 740px) {
+    .breadcrumb{
+        margin-top: 128px;
+    }
+}

@@ -443,7 +443,7 @@
       </div>
       <div class="row">
         <div class="col"></div>
-        <div class="col"><button type="button" class="btn btn-view">Đánh giá</button></div>
+        <div class="col"><button type="button" class="btn btn-view btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Đánh giá</button></div>
         <div class="col"><button type="button" class="btn btn-view">Mua lại</button></div>
       </div>
     </div>
@@ -583,11 +583,54 @@
       </div>
         </div>     
       </div>
-      <script src="./access/js/myaccount.js"></script>
-      
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered  ">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">Đánh giá sản phẩm</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <h2 style="margin-bottom: 30px">Hãy là người đầu tiên nhận xét "Áo sơ mi nữ xù họa tiết nhỏ"</h2>
+              <form action="#" method="get">
+                <div class="mb-3">
+                  <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                    <option selected><b>Đánh giá của bạn *</b></option>
+                    <option value="1">Tuyệt vời</option>
+                    <option value="2">Tốt</option>
+                    <option value="3">Hài Lòng</option>
+                    <option value="4">Không Hài Lòng</option>
+                  </select>
+                </div>
+                <div class="mb-3 form-floating">
+                  <textarea class="form-control" placeholder="Nhận xét của bạn *" id="nhanxet" style="height: 200px"></textarea>
+                  <label for="nhanxet"><b>Nhận xét của bạn *</b></label>
+                </div>
+                  <div class="mb-3 row">
+                    <div class="col-6">
+                      <label for="ten" class="form-label"><b>Tên *</b></label>
+                      <input type="text" class="form-control" id="ten" aria-describedby="emailHelp">
+                    </div>
+                    <div class="col-6">
+                      <label for="email" class="form-label"><b>Email   *</b></label>
+                      <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                    </div>
+                  </div>
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="save">
+                  <label class="form-check-label" for="save">Lưu tên của tôi, email, và trang web trong trình duyệt này cho lần bình luận kế tiếp của tôi</label>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn" data-bs-dismiss="modal">Gửi đi</button>
+            </div>
+          </form>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="footer"></div>
-    <script src="./access/js/base.js"></script>
-
+  <div class="footer"></div>
+  <script src="./access/js/myaccount.js"></script>
+  <script src="./access/js/base.js"></script>
   </body>
 </html>

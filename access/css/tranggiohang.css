@@ -92,3 +92,15 @@ a{
 .cart-info__container{
     max-width: 450px;
 }
+@media (max-width: 1023px) and (min-width: 740px) {
+    .body{
+        margin-top: 128px;
+    }
+}
+
+/*mobile*/
+@media (max-width: 740px) {
+    .body{
+        margin-top: 128px;
+    }
+}
