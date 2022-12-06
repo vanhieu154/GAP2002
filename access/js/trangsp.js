@@ -98,7 +98,7 @@ function LoadJson(){
                         let s = 0;
                         for(let p of data){
                             s=p.Price-p.Discount*p.Price/100;
-                            if (s>(gia-100) && s<gia || s==gia) {
+                            if (s>(gia-100000) && s<gia || s==gia) {
                                 product[j]=p;
                                 j++;  
                             }
@@ -120,7 +120,7 @@ function LoadJson(){
                                 let gia=all_price_check[y].value;
                                 let s = 0;
                                 s=p.Price-p.Discount*p.Price/100;
-                                if ( s > (gia-100) && s < gia || s == gia ) {
+                                if ( s > (gia-100000) && s < gia || s == gia ) {
                                     product[j]=p;
                                     j++;  
                                 }
