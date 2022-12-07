@@ -5,6 +5,7 @@ for (let i = 0; i < a.length; i++) {
 }
 const deliveryInfo2=document.querySelector(".delivery2");
 function tohowtopay() {
+      var KT_SDT = document.getElementById("sdt").value
       if(document.getElementById('hoten').value==""){
         alert("Bạn chưa nhập họ và tên");
         document.getElementById('hoten').focus();
@@ -16,6 +17,11 @@ function tohowtopay() {
       else if(document.getElementById('sdt').value==""){
         alert("Bạn chưa nhập số điện thoại");
         document.getElementById('sdt').focus();
+      }
+      else if(KT_SDT[0] != 0 || KT_SDT.length != 10){
+        alert(" số điện thoại không hợp lệ mời kiểm tra lại");
+        document.getElementById("txt_phone").focus();
+        document.getElementById("txt_phone").select();
       }
       else if(document.getElementById('diachi').value==""){
         alert("Bạn chưa nhập địa chỉ");
@@ -71,15 +77,13 @@ if(deliveryInfo2){
         if(tmp==null){
           tmp = new finnalPrice("Không áp dụng voucher",0,pay);
         }
-        var finalPrice = sessionStorage.getItem('finalPrice') ? JSON.parse(sessionStorage.getItem('finalPrice')):[];
-        finalPrice.push(tmp)
         wC[wC.length]=a;
+        wC[wC.length-1].push(tmp);
         sessionStorage.removeItem("Cart");
         document.querySelector(".delivery-info2").style.display="none"
         document.getElementById("priceCal").style.display="none"
         document.querySelector(".success-order").style.display="block"
         sessionStorage.setItem('waitConfirm',JSON.stringify(wC));
-        sessionStorage.setItem('finalPrice',JSON.stringify(finalPrice))
       }
     })
 }

@@ -13,6 +13,11 @@
     <link rel="stylesheet" href="./access/css/base.css">
     <link rel="stylesheet" href="./myaccount.html">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script>
+      window.onload = function () {
+        showTK();
+      }
+  </script>
   </head>
   <body>    
     <nav class="navbar"></nav>
@@ -314,11 +319,11 @@
   <!-- top -->
   <div class="top--header">
     <div class="row myaccount-body-right-top">
-      <div class="col myaccount-body-right-top-confirm"><a href="#">Chờ xác nhận</a></div>
+      <div class="col myaccount-body-right-top-confirm"><a href="#" onclick="showWP()">Chờ xác nhận</a></div>
       <div class="col myaccount-body-right-top-cho-lay-hang"><a href="#">Chờ lấy hàng</a></div>
       <div class="col myaccount-body-right-top-dang-giao"><a href="#">Đang giao</a></div>
       <div class="col myaccount-body-right-top-da-giao"><a href="#">Đã giao</a></div>
-      <div class="col myaccount-body-right-top-da-huy"><a href="#">Đã hủy</a></div>
+      <div class="col myaccount-body-right-top-da-huy"><a href="#" onclick="showDaHuy()">Đã hủy</a></div>
       <div class="col-3 myaccount-body-right-top-tra-hang"><a href="#">Trả hàng/Hoàn tiền</a></div>
       
       <hr style="border:1px solid rgb(20, 19, 19);margin-top: 20px;margin-left: 5px; background-color: black;">
@@ -326,42 +331,9 @@
   <div class="row text-center chua-co-don-hang"><p>Chưa có đơn hàng nào</p></div>
   </div>
   <!-- Chờ xác nhận -->
-    <div class="row myaccount-body-right-top-wait-confirm cho-xac-nhan" id="cho_xac_nhan">
+    <div class="row myaccount-body-right-top-wait-confirm cho-xac-nhan">
       <div id="wait-confirm-container">
-        <div class="row">
-          <div class="col">
-            <p style="text-align: left;margin-left: 5%;">Tên Nhãn Hàng</p>
-          </div>
-          <div class="col">
-            <p style="text-align: right;margin-right:20%">Chờ xác nhận</p>
-          </div>
-        </div>
-        <hr class="hr_style">
-        <div class="row">
-          <div class="col-2"> <img class="img-order" src="./access/Img/sanpham/gap01/gap01_1.webp" alt=""></div>
-          <div class="col information">
-            <p>Áo sơ mi nữ xù họa tiết nhỏ</p>
-            <p>Số lượng: 1</p>
-          </div>
-          <div class="col price">
-            <span style="color: red;font-size:20px">120.000<sup>đ</sup></span><del><span style="color: darkgray;">(150.000)<sup>đ</sup></span></del>
-          </div>
-        </div>
-        <hr class="hrr__style">
-        <div class="row">
-          <div class="col-6">Mã giảm giá áp dụng</div>
-          <div class="col-6"  style="text-align: right; padding-right:20%">AVNDNN</div>
-          <div class="col-6">Giá trị giảm</div>
-          <div class="col-6"  style="text-align: right; padding-right:20%">100000</div>
-        </div>
-        <div class="row total__bill">
-          <p>Tổng số tiền: <span>120,000<sup>đ</sup></span></p>
-        </div>
-        <div class="row">
-          <div class="col"></div>
-          <div class="col"><button type="button" class="btn btn-view">Xem chi tiết đơn hàng</button></div>
-          <div class="col"><button type="button" class="btn btn-view">Hủy đơn hàng</button></div>
-        </div>
+
       </div>
     </div>
     <!-- Chờ lấy hàng -->
@@ -459,7 +431,7 @@
       </div>
     </div>
     <!-- Đã hủy -->
-    <div class="row myaccount-body-right-top-wait-confirm da-huy">
+    <div class="row myaccount-body-right-top-wait-confirm da-huy" id="da_huy">
       <div class="row">
         <div class="col">
           <p style="text-align: left;margin-left: 5%;">Tên Nhãn Hàng</p>

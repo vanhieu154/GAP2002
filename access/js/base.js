@@ -290,3 +290,17 @@ function pSearch1(){
   sessionStorage.setItem('pSearch',pS); 
   window.location='./trangsp.html';
 }
+function toGioHang(){
+  if(sessionStorage.getItem('checkLogin')==1){
+    window.location='./giohangtrong.html'
+  }else{
+    alert("Bạn chưa đăng nhập")
+  }
+}
+function toThanhToan(){
+  if(sessionStorage.getItem('checkLogin')==1){
+    window.location='./thanhtoan.html'
+  }else{
+    alert("Bạn chưa đăng nhập")
+  }
+}
