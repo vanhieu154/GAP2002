@@ -160,13 +160,13 @@ function showLogin() {
     html+='<div class="socials-icon  ">';
     html+='<i class="fa-brands fa-facebook"></i>';
     html+='</div>';
-    html+='<div class="">Facebook</div>';
+    html+='<div class="fb"><a href="https://www.facebook.com.vn">Facebook</a></div>';
     html+='</button>';
     html+='<button class="btn-header">';
     html+='<div class="socials-icon">';
     html+='<i class="fa-brands fa-google"></i>';
     html+='</div>';
-    html+='<div class="">Google</div>';
+    html+='<div class="gg"><a href="https://www.google.com.vn">Google</a></div>';
     html+='</button>';
     html+='</div>';
     html+='<div class="header__login__footer">';
