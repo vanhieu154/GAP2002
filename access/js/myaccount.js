@@ -92,14 +92,6 @@ if(choxacnhan){
             // html+='</div>';
         }
         document.getElementById("wait-confirm-container").innerHTML=html;
-
-
-
-
-
-
-
-
         document.querySelector(".cho-xac-nhan").style.display="block"
         document.querySelector(".cho-lay-hang").style.display="none"
         document.querySelector(".dang-giao").style.display="none"
