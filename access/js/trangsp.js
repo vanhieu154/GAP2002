@@ -164,6 +164,10 @@ function LoadJson(){
                         j++;
                     }
                 }
+                console.log(product);
+                if(product.length==0){
+                    document.getElementById("total_product").innerHTML="<h1 style='margin: auto;padding-top:50px;'>Không tìm thấy sản phẩm phù hợp</h1>";
+                }
                 sessionStorage.removeItem('pSearch');
                 showProduct(product,0,product.length,"total_product")
             }

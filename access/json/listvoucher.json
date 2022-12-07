@@ -3,7 +3,7 @@
         "ID":1,
         "MaVoucher":"GAP2002DISCOUNT1",
         "TenVoucher":"Giảm 30%",
-        "Giatrigiam":0.3,
+        "Giatrigiam":30,
         "Noidung":"Đơn tối thiểu 800k không giới hạn giá trị khuyến mãi tối đa",
         "Ngaybatdau":"06/12/2022",
         "Ngayketthu":"31/12/2022"
@@ -12,7 +12,7 @@
         "ID":2,
         "MaVoucher":"GAP2002DISCOUNT2",
         "TenVoucher":"Giảm 10%",
-        "Giatrigiam":0.1,
+        "Giatrigiam":10,
         "Noidung":"Đơn tối thiểu 800k không giới hạn giá trị khuyến mãi tối đa",
         "Ngaybatdau":"06/12/2022",
         "Ngayketthu":"31/12/2022"
@@ -35,7 +35,7 @@
         "ID":4,
         "MaVoucher":"GAP2002DISCOUNT4",
         "TenVoucher":"Giảm 10%",
-        "Giatrigiam":0.1,
+        "Giatrigiam":10,
         "Noidung":"Đơn tối thiểu 100K",
         "Ngaybatdau":"06/12/2022",
         "Ngayketthu":"31/12/2022"

@@ -30,7 +30,7 @@ a{
 
 .row{
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     overflow: hidden;
 }
 .voucher-hot__100k{

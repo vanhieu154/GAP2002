@@ -32,8 +32,74 @@ if(matkhau){
     })
 }
 const choxacnhan=document.querySelector(".myaccount-body-right-top-confirm");
+
 if(choxacnhan){
     choxacnhan.addEventListener("click",function(){
+        var finalPrice = sessionStorage.getItem('finalPrice') ? JSON.parse(sessionStorage.getItem('finalPrice')):[];
+        var waitConfirm = sessionStorage.getItem("waitConfirm") ? JSON.parse(sessionStorage.getItem("waitConfirm")) : [];
+        html="";
+        for (let i = 0; i < finalPrice.length; i++) {
+            var p=waitConfirm[i];
+            // console.log(p);
+            // console.log(finalPrice[i]);
+            // html+='<div id="wait-confirm-container">';
+            html+='<div class="row">';
+            html+='<div class="col">';
+            for (let a = 0; a < p.length; a++) {
+                console.log(p[a]);
+                html+='<p style="text-align: left;margin-left: 5%;">'+p[a].Hang+'</p>';
+                html+='</div>';
+                html+='<div class="col">';
+                html+='<p style="text-align: right;margin-right:20%">Chờ xác nhận</p>';
+                html+='</div>';
+                html+='</div>';
+                html+='<hr class="hr_style">';
+                html+='<div class="row">';
+                html+='<div class="col-2"> <img class="img-order" src="./access/Img/sanpham/'+p[a].Hinhanh[0]+'" alt=""></div>';
+                html+='<div class="col information">';
+                html+='<p>'+p[a].TenSP+'</p>';
+                html+='<p>Số lượng: '+p[a].quantity+'</p>';
+                html+='</div>';
+                html+='<div class="col price">';
+                if(p[a].Discount>0){
+                    html+='<span style="color: red;font-size:20px">'+p[a].total+'<sup>đ</sup></span><del><span style="color: darkgray;">('+p[a].Price*p[a].quantity+')<sup>đ</sup></span></del>';
+                }else{
+                    html+='<span style="color: red;font-size:20px">'+p[a].total+'<sup>đ</sup></span><del>';
+                }
+                html+='</div>';
+                html+='</div>';
+                html+='<hr class="hrr__style">';
+            }
+            if(finalPrice[i].discountNum>0){
+                html+='<div class="row">';
+                html+='<div class="col-6">Mã giảm giá áp dụng</div>';
+                html+='<div class="col-6"  style="text-align: right; padding-right:20%">'+finalPrice[i].discount+'</div>';
+                html+='<div class="col-6">Giá trị giảm</div>';
+                if(finalPrice[i].discountNum>1000){
+                    html+='<div class="col-6"  style="text-align: right; padding-right:20%">'+finalPrice[i].discountNum+'<sup>đ</sup></div>';
+                }
+                html+='<div class="col-6"  style="text-align: right; padding-right:20%">'+finalPrice[i].discountNum+'%</div>';
+                html+='</div>';
+            }
+            html+='<div class="row total__bill">';
+            html+='<p>Tổng số tiền: <span>'+finalPrice[i].price+'<sup>đ</sup></span></p>';
+            html+='</div>';
+            html+='<div class="row">';
+            html+='<div class="col"></div>';
+            html+='<div class="col"><button type="button" class="btn btn-view">Xem chi tiết đơn hàng</button></div>';
+            html+='<div class="col"><button type="button" class="btn btn-view">Hủy đơn hàng</button></div>';
+            html+='</div>';
+            // html+='</div>';
+        }
+        document.getElementById("wait-confirm-container").innerHTML=html;
+
+
+
+
+
+
+
+
         document.querySelector(".cho-xac-nhan").style.display="block"
         document.querySelector(".cho-lay-hang").style.display="none"
         document.querySelector(".dang-giao").style.display="none"
