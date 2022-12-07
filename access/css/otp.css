@@ -27,6 +27,9 @@ input[type="number"] {
   font-weight: 500;
   line-height: 1.2;
 }
+.mb-6 input{
+  font-size: 1.6rem;
+}
 .header{
   position: fixed;
   z-index: 99;
